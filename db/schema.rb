@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_04_153100) do
+ActiveRecord::Schema.define(version: 2019_04_04_215853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "images", force: :cascade do |t|
-    t.string "name"
     t.text "url"
     t.string "description"
     t.bigint "user_id"
@@ -26,7 +25,6 @@ ActiveRecord::Schema.define(version: 2019_04_04_153100) do
   end
 
   create_table "links", force: :cascade do |t|
-    t.string "name"
     t.text "url"
     t.string "title"
     t.string "description"
@@ -45,7 +43,6 @@ ActiveRecord::Schema.define(version: 2019_04_04_153100) do
   end
 
   create_table "videos", force: :cascade do |t|
-    t.string "name"
     t.text "url"
     t.string "description"
     t.bigint "user_id"
