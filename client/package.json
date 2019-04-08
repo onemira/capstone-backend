@@ -33,5 +33,6 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^2.1.8"
-  }
+  },
+  "proxy": "http://localhost:3000"
 }

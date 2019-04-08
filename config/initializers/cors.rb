@@ -10,7 +10,7 @@ if Rails.env.development?
     allow do
       origins 'localhost:*'
 
-      resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :option, :head]
+      resource '*', headers: :any
     end
   end
 end
