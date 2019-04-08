@@ -1,8 +1,11 @@
 import auth0 from 'auth0-js'
-import history from './history'
+// import history from './history'
 
 const DOMAIN = 'mirakang.auth0.com'
 const CLIENTID = 'DEfsC2eSxjSFa11VdZe5ZGxnKGdS7AEW'
+const AFTER_LOGIN = '/'
+const AFTER_LOGOUT = '/'
+const FAILED_LOGIN = '/'
 
 class Auth {
   userProfile

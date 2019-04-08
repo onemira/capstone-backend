@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../images/logo_cut.png'
 
 class Navbar extends Component {
@@ -109,15 +110,9 @@ class Navbar extends Component {
                 >
                   <a href="/Upload">Upload</a>
                 </button> */}
-                <button
-                  type="button"
-                  className="btn btn-primary ml-1"
-                  data-toggle="button"
-                  aria-pressed="false"
-                  autoComplete="off"
-                >
+                <Link to="/login" className="btn btn-primary ml-1">
                   Log in
-                </button>
+                </Link>
               </form>
             </div>
           </nav>

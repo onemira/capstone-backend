@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Router, Switch, Route } from 'react-router-dom'
-import auth from './auth'
-import history from './history'
+import auth from './components/auth'
+import history from './components/history'
+import axios from 'axios'
 
 import MainPage from './pages/MainPage'
 import Upload from './components/Upload'

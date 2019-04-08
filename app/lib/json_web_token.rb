@@ -1,5 +1,6 @@
 require "net/http"
 require "uri"
+ 
 class JSONWebToken
   def self.verify(token)
     JWT.decode(token, nil,
@@ -10,6 +11,7 @@ class JSONWebToken
       jwks_hash[header["kid"]]
     end
   end
+
   def self.jwks_hash
     jwks_raw = Net::HTTP.get URI("https://mirakang.auth0.com/.well-known/jwks.json")
     jwks_keys = Array(JSON.parse(jwks_raw)["keys"])
