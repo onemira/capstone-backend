@@ -1,4 +1,6 @@
-private
+class ApplicationController < ActionController::API
+  private
+  
   def current_user
     @user ||= begin
       token = request.headers["Authorization"].to_s.split(" ").last
@@ -8,4 +10,4 @@ private
   rescue JWT::VerificationError, JWT::DecodeError
     nil
   end
-
+end

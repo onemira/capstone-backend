@@ -7,22 +7,23 @@ import Jumbotron from '../components/Jumbotron'
 
 class Youtube extends Component {
   state = {
-    videos: [],
-    video: {}
+    videos: []
   }
 
-  componentDidMount() {
+  loadVideos = () => {
     axios.get('http://localhost:3000/api/videos').then(response => {
       this.setState({ videos: response.data })
     })
   }
 
-  deleteVideo = event => {
-    axios
-      .delete(`http://localhost:3000/api/videos/${this.state.video.id}`)
-      .then(response => {
-        this.props.history.push('/')
-      })
+  componentDidMount() {
+    this.loadVideos()
+  }
+
+  deleteVideo = id => {
+    axios.delete(`http://localhost:3000/api/videos/${id}`).then(response => {
+      this.loadVideos()
+    })
   }
 
   render() {
@@ -33,12 +34,11 @@ class Youtube extends Component {
         {/* <Footer /> */}
         <Jumbotron />
         <Link className="btn btn-dark mx-auto width-200px" to="/videos/upload">
-          {' '}
-          Upload{' '}
+          Upload
         </Link>
         <div className="space-medium transparent-background">
           {this.state.videos.map(video => (
-            <div className="video-testimonial-block videos">
+            <div key={video.id} className="video-testimonial-block videos">
               <div className="embed-responsive embed-responsive-16by9 video">
                 <iframe
                   className="embed-responsive-item"
@@ -61,26 +61,22 @@ class Youtube extends Component {
                     data-dismiss="modal"
                     type="button"
                     id="del"
-                    onClick={this.deleteVideo}
+                    onClick={() => this.deleteVideo(video.id)}
                   >
-                    <a href="/">
-                      <i className="fas fa-trash-alt" />
-                    </a>
+                    <i className="fas fa-trash-alt" />
                   </button>
                 </div>
-                <Link to="/videos/edit">
-                  <button
+                <div>
+                  <Link
+                    to={`/videos/edit/${video.id}`}
                     className="btn btn-light btn-outline-warning video-edit-btn"
                     data-dismiss="modal"
                     type="button"
                     id="edit"
-                    onClick={this.EditVideo}
                   >
-                    <a href="/">
-                      <i className="fas fa-cut" />
-                    </a>
-                  </button>
-                </Link>
+                    <i className="fas fa-edit" />
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

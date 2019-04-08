@@ -11,8 +11,6 @@ class Edit extends Component {
   }
 
   componentDidMount = () => {
-    // TODO:  we will do an API call to get the information
-    // console.log('getting the information for ' + this.props.match.params.id)
     axios
       .get(`http://localhost:3000/api/videos/${this.props.match.params.id}`)
       .then(response => {
@@ -36,8 +34,12 @@ class Edit extends Component {
       type: 'object',
       required: ['url', 'description'],
       properties: {
-        url: { type: 'string', title: 'Url', default: '' },
-        description: { type: 'string', title: 'Description', default: '' }
+        url: { type: 'string', title: 'Url', default: this.state.video.url },
+        description: {
+          type: 'string',
+          title: 'Description',
+          default: this.state.video.description
+        }
       }
     }
 

@@ -57,7 +57,7 @@ class App extends Component {
             <Route exact path="/videos/upload" component={Upload} />
             <Route exact path="/links/upload" component={UploadLink} />
             <Route exact path="/images/upload" component={UploadImage} />
-            <Route exact path="/videos/edit" component={Edit} />
+            <Route exact path="/videos/edit/:id" component={Edit} />
             <Route exact path="/link" component={Links} />
             <Route exact path="/video" component={Youtube} />
             <Route exact path="/image" component={Image} />

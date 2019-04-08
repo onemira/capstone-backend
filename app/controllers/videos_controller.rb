@@ -15,7 +15,7 @@ class VideosController < ApplicationController
   # POST /videos
   # POST /videos.json
   def create
-    @video = Video.new(video_params)
+    @video = current_user.videos.new(video_params)
 
     if @video.save
       render :show, status: :created, location: @video
@@ -43,7 +43,7 @@ class VideosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_video
-      @video = Video.find(params[:id])
+      @video = current_user.videos.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

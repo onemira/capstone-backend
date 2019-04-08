@@ -14,7 +14,7 @@ class Upload extends Component {
       })
       .then(response => {
         console.log(response)
-        // this.props.history.push('/')
+        this.props.history.push('/video')
       })
   }
 
