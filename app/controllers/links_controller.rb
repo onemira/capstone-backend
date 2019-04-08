@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+    @link = Link.all
   end
 
   # GET /links/1
@@ -15,7 +15,7 @@ class LinksController < ApplicationController
   # POST /links
   # POST /links.json
   def create
-    @link = Link.new(link_params)
+    @link = Link.new(params[:link_id])
 
     if @link.save
       render :show, status: :created, location: @link
@@ -43,7 +43,7 @@ class LinksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_link
-      @link = Link.find(params[:id])
+      @link = Link.find(params[:link_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
