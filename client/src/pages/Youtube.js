@@ -61,7 +61,8 @@ class Youtube extends Component {
                     data-dismiss="modal"
                     type="button"
                     id="del"
-                    onClick={() => this.deleteVideo(video.id)}
+                    onClick={() => this.deleteVideo(v
+                      ideo.id)}
                   >
                     <i className="fas fa-trash-alt" />
                   </button>

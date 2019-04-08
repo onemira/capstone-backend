@@ -10,11 +10,11 @@ class UploadImage extends Component {
 
     axios
       .post('http://localhost:3000/api/images', {
-        video: form.formData
+        image: form.formData
       })
       .then(response => {
         console.log(response)
-        // this.props.history.push('/')
+        this.props.history.push('/image')
       })
   }
 
@@ -22,7 +22,7 @@ class UploadImage extends Component {
     const formSchema = {
       title: 'Image',
       type: 'object',
-      required: ['title', 'url'],
+      required: ['url', 'description'],
       properties: {
         url: { type: 'string', title: 'Url', default: '' },
         description: { type: 'string', title: 'Description', default: '' }
