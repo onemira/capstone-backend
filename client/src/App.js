@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Router, Switch, Route } from 'react-router-dom'
+import auth from './auth'
+import history from './history'
 
 import MainPage from './pages/MainPage'
 import Upload from './components/Upload'
@@ -17,11 +19,39 @@ import Contact from './pages/Contact'
 import Meetup from './pages/Meetup'
 
 class App extends Component {
+  componentWillMount() {
+    if (auth.isAuthenticated()) {
+      axios.defaults.headers.common = {
+        Authorization: auth.authorizationHeader()
+      }
+    }
+  }
+
   render() {
     return (
       <>
-        <Router>
+        <Router history={history}>
           <Switch>
+            <Route path="/login" render={() => auth.login()} />
+            <Route
+              path="/logout"
+              render={() => {
+                auth.logout()
+                return <></>
+              }}
+            />
+            <Route
+              path="/callback"
+              render={() => {
+                auth.handleAuthentication(() => {
+                  axios.defaults.headers.common = {
+                    Authorization: auth.authorizationHeader()
+                  }
+                })
+                return <></>
+              }}
+            />
+
             <Route exact path="/" component={MainPage} />
             <Route exact path="/videos/upload" component={Upload} />
             <Route exact path="/links/upload" component={UploadLink} />
