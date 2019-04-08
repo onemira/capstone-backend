@@ -9,6 +9,8 @@ import Upload from './components/Upload'
 import UploadLink from './components/UploadLink'
 import UploadImage from './components/UploadImage'
 import Edit from './components/Edit'
+import EditImage from './components/EditImage'
+import EditLink from './components/EditLink'
 
 import Youtube from './pages/Youtube'
 import Image from './pages/Image'
@@ -58,6 +60,8 @@ class App extends Component {
             <Route exact path="/links/upload" component={UploadLink} />
             <Route exact path="/images/upload" component={UploadImage} />
             <Route exact path="/videos/edit/:id" component={Edit} />
+            <Route exact path="/images/edit/:id" component={EditImage} />
+            <Route exact path="/links/edit/:id" component={EditLink} />
             <Route exact path="/link" component={Links} />
             <Route exact path="/video" component={Youtube} />
             <Route exact path="/image" component={Image} />
@@ -65,7 +69,7 @@ class App extends Component {
             <Route exact path="/article" component={Article} />
             <Route exact path="/code" component={Code} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/Meetup" component={Meetup} />
+            <Route exact path="/meetup" component={Meetup} />
           </Switch>
         </Router>
       </>

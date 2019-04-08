@@ -10,4 +10,5 @@ class ApplicationController < ActionController::API
   rescue JWT::VerificationError, JWT::DecodeError
     nil
   end
+  helper_method :current_user
 end

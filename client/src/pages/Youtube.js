@@ -30,12 +30,12 @@ class Youtube extends Component {
     return (
       <>
         <Navbar />
-        {/* <Iconbar /> */}
-        {/* <Footer /> */}
         <Jumbotron />
+
         <Link className="btn btn-dark mx-auto width-200px" to="/videos/upload">
           Upload
         </Link>
+
         <div className="space-medium transparent-background">
           {this.state.videos.map(video => (
             <div key={video.id} className="video-testimonial-block videos">
@@ -53,16 +53,13 @@ class Youtube extends Component {
 
               {/* ------delete & edit btn--- */}
               <div className="video-detail">
-                {/* <p>{video.name}</p>
-                <p>{video.description}</p> */}
                 <div className="deleteVideo">
                   <button
                     className="btn btn-light btn-outline-danger video-delete-btn"
                     data-dismiss="modal"
                     type="button"
                     id="del"
-                    onClick={() => this.deleteVideo(v
-                      ideo.id)}
+                    onClick={() => this.deleteVideo(video.id)}
                   >
                     <i className="fas fa-trash-alt" />
                   </button>

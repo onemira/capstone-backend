@@ -7,38 +7,38 @@ import Jumbotron from './Jumbotron'
 
 class Edit extends Component {
   state = {
-    video: {}
+    link: {}
   }
 
   componentDidMount = () => {
     axios
-      .get(`http://localhost:3000/api/videos/${this.props.match.params.id}`)
+      .get(`http://localhost:3000/api/links/${this.props.match.params.id}`)
       .then(response => {
-        this.setState({ video: response.data })
+        this.setState({ link: response.data })
       })
   }
 
   onSubmit = form => {
     axios
-      .put(`http://localhost:3000/api/videos/${this.props.match.params.id}`, {
-        video: form.formData
+      .put(`http://localhost:3000/api/links/${this.props.match.params.id}`, {
+        link: form.formData
       })
       .then(response => {
-        this.props.history.push(`/videos/${this.props.match.params.id}`)
+        this.props.history.push(`/links/${this.props.match.params.id}`)
       })
   }
 
   render() {
     const formSchema = {
-      title: 'Video',
+      title: 'Link',
       type: 'object',
       required: ['url', 'description'],
       properties: {
-        url: { type: 'string', title: 'Url', default: this.state.video.url },
+        url: { type: 'string', title: 'Url', default: this.state.link.url },
         description: {
           type: 'string',
           title: 'Description',
-          default: this.state.video.description
+          default: this.state.link.description
         }
       }
     }

@@ -20,7 +20,6 @@ export default class Links extends Component {
       <>
         <Navbar />
         <Jumbotron />
-        {/* <Iconbar /> */}
         <ul className="nav nav-tabs d-flex">
           <li className="nav-item">
             <a className="nav-link active" href="/">
