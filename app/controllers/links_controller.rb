@@ -4,7 +4,13 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
+    search = params[:search]
+
+    if search.present?
+    @links = Link.all.order.where("name ilike ?","%#{search}%")
+    else
     @links = Link.all.order(created_at: :desc)
+    end
   end
 
   # GET /links/1

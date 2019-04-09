@@ -21,7 +21,7 @@ class Edit extends Component {
         video: form.formData
       })
       .then(response => {
-        this.props.history.push(`/videos/${this.props.match.params.id}`)
+        this.props.history.push('/video')
       })
   }
 

@@ -8,10 +8,49 @@ export default class Links extends Component {
     links: []
   }
 
-  componentDidMount() {
+  loadLinks = () => {
     axios.get('http://localhost:3000/api/links').then(response => {
       this.setState({ links: response.data })
     })
+  }
+
+  componentDidMount = () => {
+    this.loadLinks()
+  }
+
+  deleteLink = id => {
+    axios.delete(`http://localhost:3000/api/links/${id}`).then(response => {
+      this.loadLinks()
+    })
+  }
+
+  buttons = link => {
+    if (!link.owned) {
+      return
+    }
+
+    return (
+      <>
+        <button
+          className="btn btn-outline-danger"
+          data-dismiss="modal"
+          type="button"
+          id="del"
+          onClick={() => this.deleteLink(link.id)}
+        >
+          <i className="fas fa-trash-alt" />
+        </button>
+        <Link
+          to={`/links/edit/${link.id}`}
+          className="btn btn-outline-warning"
+          data-dismiss="modal"
+          type="button"
+          id="edit"
+        >
+          <i className="fas fa-cut" />
+        </Link>
+      </>
+    )
   }
 
   render() {
@@ -59,26 +98,7 @@ export default class Links extends Component {
                   </td>
                   <td>{link.user_id}</td>
                   <td>{link.created_at}</td>
-                  <td
-                    className="btn btn-outline-danger"
-                    data-dismiss="modal"
-                    type="button"
-                    id="del"
-                  >
-                    <a href="/link">
-                      <i className="fas fa-trash-alt" />
-                    </a>
-                  </td>
-                  <td
-                    className="btn btn-outline-warning"
-                    data-dismiss="modal"
-                    type="button"
-                    id="edit"
-                  >
-                    <a href={`/edit/${index}`}>
-                      <i className="fas fa-cut" />
-                    </a>
-                  </td>
+                  {this.buttons(link)}
                 </tr>
               ))}
             </tbody>

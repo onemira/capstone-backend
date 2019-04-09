@@ -21,7 +21,7 @@ class Edit extends Component {
         image: form.formData
       })
       .then(response => {
-        this.props.history.push(`/images/${this.props.match.params.id}`)
+        this.props.history.push('/image')
       })
   }
 

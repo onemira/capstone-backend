@@ -31,25 +31,26 @@ class Youtube extends Component {
 
     return (
       <>
-        <button
-          className="btn btn-light btn-outline-danger video-delete-btn"
-          data-dismiss="modal"
-          type="button"
-          id="del"
-          onClick={() => this.deleteVideo(video.id)}
-        >
-          <i className="fas fa-trash-alt" />
-        </button>
-
-        <Link
-          to={`/videos/edit/${video.id}`}
-          className="btn btn-light btn-outline-warning video-edit-btn"
-          data-dismiss="modal"
-          type="button"
-          id="edit"
-        >
-          <i className="fas fa-edit" />
-        </Link>
+        <div>
+          <button
+            className="btn btn-light btn-outline-danger video-delete-btn"
+            data-dismiss="modal"
+            type="button"
+            id="del"
+            onClick={() => this.deleteVideo(video.id)}
+          >
+            <i className="fas fa-trash-alt" />
+          </button>
+          <Link
+            to={`/videos/edit/${video.id}`}
+            className="btn btn-light btn-outline-warning video-edit-btn"
+            data-dismiss="modal"
+            type="button"
+            id="edit"
+          >
+            <i className="fas fa-edit" />
+          </Link>
+        </div>
       </>
     )
   }

@@ -21,7 +21,7 @@ class Edit extends Component {
         link: form.formData
       })
       .then(response => {
-        this.props.history.push(`/links/${this.props.match.params.id}`)
+        this.props.history.push('/link')
       })
   }
 
