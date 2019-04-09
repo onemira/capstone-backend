@@ -1,16 +1,11 @@
 import React, { Component } from 'react'
-import Navbar from '../components/Navbar'
-// import Iconbar from '../components/Iconbar'
-import Pagination from '../components/Pagination'
-import Footer from '../components/Footer'
+import Jumbotron from '../components/Jumbotron'
 
 export default class Meetup extends Component {
   render() {
     return (
       <>
-        <Navbar />
-        {/* <Iconbar /> */}
-        <Footer />
+        <Jumbotron />
         <div className="row mt-4 mb-2 mr-3 ml-3">
           <div className="col-md-6 col-sm-12">
             <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -85,7 +80,6 @@ export default class Meetup extends Component {
             </div>
           </div>
         </div>
-        <Pagination />
       </>
     )
   }

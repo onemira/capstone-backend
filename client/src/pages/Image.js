@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-
-import Navbar from '../components/Navbar'
-import Jumbotron from '../components/Jumbotron'
 import Lightbox from 'react-lightbox-component'
+import Jumbotron from '../components/Jumbotron'
 
 export default class Image extends Component {
   state = {
@@ -56,12 +54,11 @@ export default class Image extends Component {
       </>
     )
   }
+
   render() {
     return (
       <>
-        <Navbar />
         <Jumbotron />
-
         <Link className="btn btn-warning mr-5" to="/images/upload">
           Upload
         </Link>
@@ -75,8 +72,9 @@ export default class Image extends Component {
                   <span role="img" aria-label="smile">
                     😆
                   </span>
-                  {/* <pre><code>
-                    if(sad() === true){spread.stop(); beHappy();}</code></pre> */}
+                  <pre>
+                    if(sad() === true)&#123;spread.stop(); beHappy()&#125;
+                  </pre>
                 </h4>
               </div>
             </div>

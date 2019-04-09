@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar'
 import Jumbotron from '../components/Jumbotron'
 
 export default class Links extends Component {
@@ -18,7 +17,6 @@ export default class Links extends Component {
   render() {
     return (
       <>
-        <Navbar />
         <Jumbotron />
         <ul className="nav nav-tabs d-flex">
           <li className="nav-item">

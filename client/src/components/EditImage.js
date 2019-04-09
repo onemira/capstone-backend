@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import Form from 'react-jsonschema-form'
 import axios from 'axios'
 
-import Navbar from './Navbar'
-import Jumbotron from './Jumbotron'
-
 class Edit extends Component {
   state = {
     image: {}
@@ -45,8 +42,6 @@ class Edit extends Component {
 
     return (
       <>
-        <Navbar />
-        <Jumbotron />
         <div className="form-group row mt-3 ml-5 mr-1">
           <label for="inputName" className="col-sm-5 col-form-label">
             <Form schema={formSchema} onSubmit={this.onSubmit} />

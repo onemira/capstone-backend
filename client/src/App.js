@@ -4,6 +4,8 @@ import auth from './components/auth'
 import history from './components/history'
 import axios from 'axios'
 
+import Navbar from './components/Navbar'
+
 import MainPage from './pages/MainPage'
 import Upload from './components/Upload'
 import UploadLink from './components/UploadLink'
@@ -18,7 +20,6 @@ import Links from './pages/Links'
 import Code from './pages/Code'
 import Article from './pages/Article'
 import File from './pages/File'
-import Contact from './pages/Contact'
 import Meetup from './pages/Meetup'
 
 class App extends Component {
@@ -34,6 +35,8 @@ class App extends Component {
     return (
       <>
         <Router history={history}>
+          <Navbar />
+
           <Switch>
             <Route path="/login" render={() => auth.login()} />
             <Route
@@ -68,7 +71,6 @@ class App extends Component {
             <Route exact path="/file" component={File} />
             <Route exact path="/article" component={Article} />
             <Route exact path="/code" component={Code} />
-            <Route exact path="/contact" component={Contact} />
             <Route exact path="/meetup" component={Meetup} />
           </Switch>
         </Router>

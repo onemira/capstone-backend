@@ -1,17 +1,11 @@
 import React, { Component } from 'react'
-import Navbar from '../components/Navbar'
-// import Iconbar from '../components/Iconbar'
-// import Footer from '../components/Footer'
-// import Pagination from '../components/Pagination'
+import Jumbotron from '../components/Jumbotron'
 
 class File extends Component {
   render() {
     return (
       <>
-        <Navbar />
-        {/* <Iconbar /> */}
-        {/* <Footer /> */}
-
+        <Jumbotron />
         <div className="container">
           <div className="row">
             <div className="col-md-6">

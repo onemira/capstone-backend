@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
-import Navbar from '../components/Navbar'
-import Iconbar from '../components/Iconbar'
-import Footer from '../components/Footer'
+import Jumbotron from '../components/Jumbotron'
 
 class Code extends Component {
   render() {
     return (
       <>
-        <Navbar />
-        <Iconbar />
-        <Footer />
+        <Jumbotron />
         <div className="card text-center">
           <div className="card-header">Featured</div>
           <div className="card-body">

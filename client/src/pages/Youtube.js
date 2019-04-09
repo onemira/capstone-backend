@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-
-import Navbar from '../components/Navbar'
 import Jumbotron from '../components/Jumbotron'
 
 class Youtube extends Component {
@@ -26,12 +24,18 @@ class Youtube extends Component {
     })
   }
 
+  buttons = image => {
+    if (!image.owned) {
+      return
+    }
+
+    return <></>
+  }
+
   render() {
     return (
       <>
-        <Navbar />
         <Jumbotron />
-
         <Link className="btn btn-dark mx-auto width-200px" to="/videos/upload">
           Upload
         </Link>
@@ -49,32 +53,25 @@ class Youtube extends Component {
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
-              </div>
+                <button
+                  className="btn btn-light btn-outline-danger video-delete-btn"
+                  data-dismiss="modal"
+                  type="button"
+                  id="del"
+                  onClick={() => this.deleteVideo(video.id)}
+                >
+                  <i className="fas fa-trash-alt" />
+                </button>
 
-              {/* ------delete & edit btn--- */}
-              <div className="video-detail">
-                <div className="deleteVideo">
-                  <button
-                    className="btn btn-light btn-outline-danger video-delete-btn"
-                    data-dismiss="modal"
-                    type="button"
-                    id="del"
-                    onClick={() => this.deleteVideo(video.id)}
-                  >
-                    <i className="fas fa-trash-alt" />
-                  </button>
-                </div>
-                <div>
-                  <Link
-                    to={`/videos/edit/${video.id}`}
-                    className="btn btn-light btn-outline-warning video-edit-btn"
-                    data-dismiss="modal"
-                    type="button"
-                    id="edit"
-                  >
-                    <i className="fas fa-edit" />
-                  </Link>
-                </div>
+                <Link
+                  to={`/videos/edit/${video.id}`}
+                  className="btn btn-light btn-outline-warning video-edit-btn"
+                  data-dismiss="modal"
+                  type="button"
+                  id="edit"
+                >
+                  <i className="fas fa-edit" />
+                </Link>
               </div>
             </div>
           ))}

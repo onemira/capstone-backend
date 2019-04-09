@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import Pagination from '../components/Pagination'
+import Jumbotron from '../components/Jumbotron'
 
 class Article extends Component {
   render() {
     return (
       <>
-        <Navbar />
-        <Footer />
+        <Jumbotron />
         <div className="row mt-4 mb-2">
           <div className="col-md-6">
             <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -226,7 +223,6 @@ class Article extends Component {
             </nav>
           </div>
         </main>
-        <Pagination />
       </>
     )
   }
