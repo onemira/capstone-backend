@@ -5,7 +5,8 @@ import Jumbotron from '../components/Jumbotron'
 
 class Youtube extends Component {
   state = {
-    videos: []
+    videos: [],
+    search: ''
   }
 
   loadVideos = () => {
@@ -16,6 +17,16 @@ class Youtube extends Component {
 
   componentDidMount() {
     this.loadVideos()
+  }
+
+  onSearch = event => {
+    this.setState({ search: event.target.value }, () => {
+      axios
+        .get(`http://localhost:3000/api/videos?search=${this.state.search}`)
+        .then(response => {
+          this.setState({ videos: response.data })
+        })
+    })
   }
 
   deleteVideo = id => {
@@ -59,9 +70,27 @@ class Youtube extends Component {
     return (
       <>
         <Jumbotron />
-        <Link className="btn btn-dark mx-auto width-200px" to="/videos/upload">
-          Upload
-        </Link>
+
+        <form className="form-inline my-2 my-lg-2">
+          <input
+            className="ml-3"
+            type="text"
+            value={this.state.search}
+            onChange={this.onSearch}
+            placeholder="Search..."
+          />
+          <button
+            className="btn btn-outline-success my-2 my-sm-0  ml-1 mr-1"
+            type="button"
+            id="search"
+            onClick={this.onSearch}
+          >
+            Search
+          </button>
+          <Link className="btn btn-dark width-200px mr-1" to="/videos/upload">
+            Upload
+          </Link>
+        </form>
 
         <div className="space-medium transparent-background">
           {this.state.videos.map(video => (

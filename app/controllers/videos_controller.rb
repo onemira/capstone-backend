@@ -4,7 +4,13 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.all.order(created_at: :desc)
+    search = params[:search]
+
+    if search.present?
+      @videos = Video.all.order(created_at: :desc).where("description ilike ?","%#{search}%")
+    else
+      @videos = Video.all.order(created_at: :desc)
+    end
   end
 
   # GET /videos/1

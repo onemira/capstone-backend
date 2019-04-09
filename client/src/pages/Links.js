@@ -5,7 +5,8 @@ import Jumbotron from '../components/Jumbotron'
 
 export default class Links extends Component {
   state = {
-    links: []
+    links: [],
+    search: ''
   }
 
   loadLinks = () => {
@@ -16,6 +17,16 @@ export default class Links extends Component {
 
   componentDidMount = () => {
     this.loadLinks()
+  }
+
+  onSearch = event => {
+    this.setState({ search: event.target.value }, () => {
+      axios
+        .get(`http://localhost:3000/api/links?search=${this.state.search}`)
+        .then(response => {
+          this.setState({ links: response.data })
+        })
+    })
   }
 
   deleteLink = id => {
@@ -68,9 +79,26 @@ export default class Links extends Component {
               JOBS
             </a>
           </li>
-          <Link className="btn btn-secondary mr-4" to="/links/upload">
-            Upload
-          </Link>
+          <form className="form-inline my-2 my-lg-2">
+            <input
+              className="ml-3"
+              type="text"
+              value={this.state.search}
+              onChange={this.onSearch}
+              placeholder="Search..."
+            />
+            <button
+              className="btn btn-outline-success my-2 my-sm-0 ml-1 mr-1"
+              type="button"
+              id="search"
+              onClick={this.onSearch}
+            >
+              Search
+            </button>
+            <Link className="btn btn-secondary mr-1" to="/links/upload">
+              Upload
+            </Link>
+          </form>
         </ul>
 
         <div className="table-responsive table-hover link-table">

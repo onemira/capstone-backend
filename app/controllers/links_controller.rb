@@ -7,7 +7,7 @@ class LinksController < ApplicationController
     search = params[:search]
 
     if search.present?
-    @links = Link.all.order.where("description ilike ?","%#{search}%")
+    @links = Link.all.order(created_at: :desc).where("title ilike ? or description ilike ?","%#{search}%", "%#{search}%")
     else
     @links = Link.all.order(created_at: :desc)
     end
@@ -54,6 +54,6 @@ class LinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      params.require(:link).permit(:name, :url, :title, :description, :user_id)
+      params.require(:link).permit(:url, :title, :description, :user_id)
     end
 end
