@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import axios from 'axios'
 import { Link } from 'react-router-dom'
 import logo from '../images/logo_cut.png'
 
@@ -97,13 +98,17 @@ class Navbar extends Component {
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
+                  // value={this.state.search}
+                  // onChange={this.onSearchChange}
                 />
-                <button
+                <Link
+                  to={'/links/search'}
                   className="btn btn-outline-success my-2 my-sm-0 mt-3"
-                  type="submit"
+                  type="button"
+                  id="search"
                 >
                   Search
-                </button>
+                </Link>
                 {/* <button
                   className="btn btn-outline-success my-2 my-sm-0 ml-1 mr-1 mt-3"
                   type="submit"

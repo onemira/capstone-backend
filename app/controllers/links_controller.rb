@@ -7,7 +7,7 @@ class LinksController < ApplicationController
     search = params[:search]
 
     if search.present?
-    @links = Link.all.order.where("name ilike ?","%#{search}%")
+    @links = Link.all.order.where("description ilike ?","%#{search}%")
     else
     @links = Link.all.order(created_at: :desc)
     end

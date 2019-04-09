@@ -6,7 +6,8 @@ import Jumbotron from '../components/Jumbotron'
 
 export default class Image extends Component {
   state = {
-    images: []
+    images: [],
+    search: ''
   }
 
   loadImages = () => {
@@ -17,6 +18,16 @@ export default class Image extends Component {
 
   componentDidMount() {
     this.loadImages()
+  }
+
+  onSearchChange = event => {
+    this.setState({ search: event.target.value }, () => {
+      axios
+        .get(`http://localhost:3000/api/images?search=${this.state.search}`)
+        .then(response => {
+          this.setState({ images: response.data })
+        })
+    })
   }
 
   deleteImage = id => {
@@ -59,9 +70,32 @@ export default class Image extends Component {
     return (
       <>
         <Jumbotron />
-        <Link className="btn btn-warning mr-5" to="/images/upload">
+
+        <Link className="btn btn-warning mr-5" to="/images">
           Upload
         </Link>
+
+        <form className="form-inline my-2 my-lg-2">
+          <input
+            type="text"
+            value={this.state.search}
+            onChange={this.onSearchChange}
+            placeholder="Search..."
+          />
+          <button
+            className="btn btn-outline-success my-2 my-sm-0 mt-3"
+            type="button"
+            id="search"
+            onClick={this.onSearchChange}
+          >
+            Search
+          </button>
+          <div className="list-group">
+            {this.state.images.map(image => (
+              <img key={image.id} src={image.url} alt="" />
+            ))}
+          </div>
+        </form>
 
         <main>
           <section className="album py-5 bg-light center dp-flex justify-content-md-center">
