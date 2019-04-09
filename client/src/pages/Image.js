@@ -90,11 +90,6 @@ export default class Image extends Component {
           >
             Search
           </button>
-          <div className="list-group">
-            {this.state.images.map(image => (
-              <img key={image.id} src={image.url} alt="" />
-            ))}
-          </div>
         </form>
 
         <main>
@@ -124,6 +119,7 @@ export default class Image extends Component {
                   width,
                   height
                 ) => {
+                  console.log({ image })
                   return (
                     <div key={index} className="d-flex flex-column">
                       <img
