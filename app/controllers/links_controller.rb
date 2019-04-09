@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @link = Link.all.order(created_at: :desc)
+    @links = Link.all.order(created_at: :desc)
   end
 
   # GET /links/1
@@ -43,7 +43,7 @@ class LinksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_link
-      @link = current_user.links.find(params[:link_id])
+      @link = current_user.links.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -5,8 +5,6 @@ import history from './components/history'
 import axios from 'axios'
 
 import Navbar from './components/Navbar'
-
-import MainPage from './pages/MainPage'
 import Upload from './components/Upload'
 import UploadLink from './components/UploadLink'
 import UploadImage from './components/UploadImage'
@@ -14,6 +12,7 @@ import Edit from './components/Edit'
 import EditImage from './components/EditImage'
 import EditLink from './components/EditLink'
 
+import MainPage from './pages/MainPage'
 import Youtube from './pages/Youtube'
 import Image from './pages/Image'
 import Links from './pages/Links'

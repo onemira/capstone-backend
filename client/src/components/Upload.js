@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import Form from 'react-jsonschema-form'
 import axios from 'axios'
-import Navbar from './Navbar'
 import Jumbotron from '../components/Jumbotron'
 
 class Upload extends Component {
   onSubmit = form => {
-    // console.log(form)
-
     axios
       .post('http://localhost:3000/api/videos', {
         video: form.formData
@@ -31,16 +28,14 @@ class Upload extends Component {
 
     return (
       <>
-        <Navbar />
         <Jumbotron />
         <div className="form-group row mt-3 ml-5 mr-1">
           <label for="inputName" className="col-sm-5 col-form-label">
             <Form schema={formSchema} onSubmit={this.onSubmit} />
           </label>
         </div>
-
         {/* -----select a category----- */}
-        <form>
+        {/* <form>
           <fieldset className="form-group">
             <div className="row mt-3 ml-5 mr-5">
               <legend className="col-form-label col-sm-2 pt-0">
@@ -87,7 +82,7 @@ class Upload extends Component {
               </div>
             </div>
             {/* -----WebsiteName input----- */}
-            <div className="form-group row mt-3 ml-5 mr-5">
+        {/* <div className="form-group row mt-3 ml-5 mr-5">
               <label for="inputName" className="col-sm-2 col-form-label">
                 Title
               </label>
@@ -99,9 +94,9 @@ class Upload extends Component {
                   placeholder="Title"
                 />
               </div>
-            </div>
-            {/* -----URL input----- */}
-            <div className="form-group row mt-3 ml-5 mr-5">
+            </div> */}
+        {/* -----URL input----- */}
+        {/* <div className="form-group row mt-3 ml-5 mr-5">
               <label for="inputURL" className="col-sm-2 col-form-label">
                 URL
               </label>
@@ -116,9 +111,9 @@ class Upload extends Component {
             </div>
             <p className="text-primary ml-5">
               *SRC URL for image or video uploading
-            </p>
-            {/* ----Description input----- */}
-            <div className="form-group row mt-3 ml-5 mr-5">
+            </p> */}
+        {/* ----Description input----- */}
+        {/* <div className="form-group row mt-3 ml-5 mr-5">
               <label for="inputURL" className="col-sm-2 col-form-label">
                 Description
               </label>
@@ -131,9 +126,9 @@ class Upload extends Component {
                 />
               </div>
             </div>
-          </fieldset>
-          {/* -----upload file----- */}
-          {/* <div className="form-group row mt-3 ml-5 mr-5">
+          </fieldset> */}
+        {/* -----upload file----- */}
+        {/* <div className="form-group row mt-3 ml-5 mr-5">
               <form method="post" action="#" id="#">
                 <div className="form-group files color">
                   <label>Upload Your File </label>
@@ -141,16 +136,15 @@ class Upload extends Component {
                 </div>
               </form>
             </div> */}
-          {/* -----save button----- */}
-
-          <div className="form-group row ml-5 mr-5">
-            <div className="col-sm-10">
-              <button type="submit" className="btn btn-primary">
-                Save
-              </button>
-            </div>
+        {/* -----save button----- */}
+        {/* <div className="form-group row ml-5 mr-5">
+          <div className="col-sm-10">
+            <button type="submit" className="btn btn-primary">
+              Save
+            </button>
           </div>
-        </form>
+        </div> */}
+        {/* </form> */}
       </>
     )
   }

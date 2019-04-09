@@ -24,12 +24,34 @@ class Youtube extends Component {
     })
   }
 
-  buttons = image => {
-    if (!image.owned) {
+  buttons = video => {
+    if (!video.owned) {
       return
     }
 
-    return <></>
+    return (
+      <>
+        <button
+          className="btn btn-light btn-outline-danger video-delete-btn"
+          data-dismiss="modal"
+          type="button"
+          id="del"
+          onClick={() => this.deleteVideo(video.id)}
+        >
+          <i className="fas fa-trash-alt" />
+        </button>
+
+        <Link
+          to={`/videos/edit/${video.id}`}
+          className="btn btn-light btn-outline-warning video-edit-btn"
+          data-dismiss="modal"
+          type="button"
+          id="edit"
+        >
+          <i className="fas fa-edit" />
+        </Link>
+      </>
+    )
   }
 
   render() {
@@ -53,26 +75,8 @@ class Youtube extends Component {
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
-                <button
-                  className="btn btn-light btn-outline-danger video-delete-btn"
-                  data-dismiss="modal"
-                  type="button"
-                  id="del"
-                  onClick={() => this.deleteVideo(video.id)}
-                >
-                  <i className="fas fa-trash-alt" />
-                </button>
-
-                <Link
-                  to={`/videos/edit/${video.id}`}
-                  className="btn btn-light btn-outline-warning video-edit-btn"
-                  data-dismiss="modal"
-                  type="button"
-                  id="edit"
-                >
-                  <i className="fas fa-edit" />
-                </Link>
               </div>
+              {this.buttons(video)}
             </div>
           ))}
         </div>

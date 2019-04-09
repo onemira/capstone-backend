@@ -20,7 +20,7 @@ export default class Links extends Component {
         <Jumbotron />
         <ul className="nav nav-tabs d-flex">
           <li className="nav-item">
-            <a className="nav-link active" href="/">
+            <a className="nav-link active" href="/link">
               DEV. TOOL
             </a>
           </li>
@@ -33,6 +33,7 @@ export default class Links extends Component {
             Upload
           </Link>
         </ul>
+
         <div className="table-responsive table-hover link-table">
           <table className="table">
             <thead>
