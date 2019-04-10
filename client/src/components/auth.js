@@ -25,6 +25,7 @@ class Auth {
     this.logout = this.logout.bind(this)
     this.handleAuthentication = this.handleAuthentication.bind(this)
     this.isAuthenticated = this.isAuthenticated.bind(this)
+    this.getProfile = this.getProfile.bind(this)
   }
 
   login() {
@@ -37,6 +38,7 @@ class Auth {
     localStorage.removeItem('id_token')
     localStorage.removeItem('expires_at')
     window.location = AFTER_LOGOUT
+    this.userProfile = null
   }
 
   handleAuthentication(callback) {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Jumbotron from '../components/Jumbotron'
+import { Link } from 'react-router-dom'
 
 export default class Meetup extends Component {
   render() {
@@ -19,9 +20,9 @@ export default class Meetup extends Component {
                   This is a wider card with supporting text below as a natural
                   lead-in to additional content.
                 </p>
-                <a href="/" className="stretched-link">
+                <Link to="/" className="stretched-link">
                   Continue reading
-                </a>
+                </Link>
               </div>
               <div className="col-auto d-none d-lg-block">
                 <svg
@@ -55,9 +56,9 @@ export default class Meetup extends Component {
                   This is a wider card with supporting text below as a natural
                   lead-in to additional content.
                 </p>
-                <a href="/" className="stretched-link">
+                <Link to="/" className="stretched-link">
                   Continue reading
-                </a>
+                </Link>
               </div>
               <div className="col-auto d-none d-lg-block">
                 <svg

@@ -16,7 +16,7 @@ export default class Image extends Component {
           <header>
             {/* <div class="navbar navbar-dark bg-dark shadow-sm">
               <div class="container d-flex justify-content-between">
-                <a href="#" class="navbar-brand d-flex align-items-center">
+                <Link to="#" class="navbar-brand d-flex align-items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -35,7 +35,7 @@ export default class Image extends Component {
                     <circle cx="12" cy="13" r="4" />
                   </svg>
                   <strong>Album</strong>
-                </a>
+                </Link>
                 <button
                   class="navbar-toggler"
                   type="button"
@@ -61,12 +61,12 @@ export default class Image extends Component {
                   too short so folks don’t simply skip over it entirely.
                 </p>
                 <p>
-                  <a href="#" class="btn btn-primary my-2">
+                  <Link to="#" class="btn btn-primary my-2">
                     Main call to action
-                  </a>
-                  <a href="#" class="btn btn-secondary my-2">
+                  </Link>
+                  <Link to="#" class="btn btn-secondary my-2">
                     Secondary action
-                  </a>
+                  </Link>
                 </p>
               </div>
             </section>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import axios from 'axios'
 import { Link } from 'react-router-dom'
 import logo from '../images/logo_cut.png'
+import auth from '../components/auth'
 
 class Navbar extends Component {
   render() {
@@ -9,9 +10,9 @@ class Navbar extends Component {
       <>
         <main className="navbar-dropdown">
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a className="navbar-brand" href="/">
+            <Link to className="navbar-brand" href="/">
               <img src={logo} className="logo" alt="logo" />
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -29,67 +30,67 @@ class Navbar extends Component {
             >
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                  <a className="nav-link d-flex flex-column" href="/">
-                    <i className="fa fa-home fa-2x" />
+                  <Link to={'/'} className="nav-link d-flex flex-column">
+                    <i className="fa fa-home fa-2x d-none d-lg-block" />
                     Home
                     <span className="sr-only">(current)</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link d-flex flex-column" href="/link">
-                    <i className="fa fa-link fa-2x">
+                  <Link to="/link" className="nav-link d-flex flex-column">
+                    <i className="fa fa-link fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-danger fa-1">11</span> */}
                     </i>
                     Link
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link d-flex flex-column" href="/video">
-                    <i className="fab fa-youtube fa-2x">
+                  <Link to="/video" className="nav-link d-flex flex-column">
+                    <i className="fab fa-youtube fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-warning">11</span> */}
                     </i>
                     Video
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link d-flex flex-column" href="/image">
-                    <i className="fa fa-image fa-2x">
+                  <Link to="/image" className="nav-link d-flex flex-column">
+                    <i className="fa fa-image fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-primary">11</span> */}
                     </i>
                     Image
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link d-flex flex-column" href="/article">
-                    <i className="fab fa-medium fa-2x">
+                  <Link to="/article" className="nav-link d-flex flex-column">
+                    <i className="fab fa-medium fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-secondary">11</span> */}
                     </i>
                     Article
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link d-flex flex-column" href="/code">
-                    <i className="fa fa-code fa-2x">
+                  <Link to="/code" className="nav-link d-flex flex-column">
+                    <i className="fa fa-code fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-info">11</span> */}
                     </i>
                     Code
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link d-flex flex-column" href="/meetup">
-                    <i className="fab fa-meetup fa-2x">
+                  <Link to="/meetup" className="nav-link d-flex flex-column">
+                    <i className="fab fa-meetup fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-light">11</span> */}
                     </i>
                     Meetup
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link d-flex flex-column" href="/file">
-                    <i className="fa fa-file fa-2x">
+                  <Link to="/file" className="nav-link d-flex flex-column">
+                    <i className="fa fa-file fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-success">11</span> */}
                     </i>
                     File
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <form className="form-inline my-2 my-lg-2">
@@ -113,11 +114,18 @@ class Navbar extends Component {
                   className="btn btn-outline-success my-2 my-sm-0 ml-1 mr-1 mt-3"
                   type="submit"
                 >
-                  <a href="/Upload">Upload</a>
+                  <Link to href="/Upload">Upload</Link>
                 </button> */}
-                <Link to="/login" className="btn btn-primary ml-1">
-                  Log in
-                </Link>
+                {auth.isAuthenticated() && (
+                  <Link to="/logout" className="btn btn-primary ml-1">
+                    Log out
+                  </Link>
+                )}
+                {!auth.isAuthenticated() && (
+                  <Link to="/login" className="btn btn-primary ml-1">
+                    Log in
+                  </Link>
+                )}
               </form>
             </div>
           </nav>

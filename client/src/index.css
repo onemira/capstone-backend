@@ -484,11 +484,13 @@ html.lightbox-open {
   position: absolute;
   top: 2rem;
   right: 4.5rem;
+  width: 2.5rem;
 }
 .image-delete-btn {
   position: absolute;
   top: 2rem;
   right: 2rem;
+  width: 2.5rem;
 }
 
 /* -----link_table---- */
@@ -516,4 +518,8 @@ html.lightbox-open {
   /* flex-wrap: wrap; */
   justify-content: center;
   flex-direction: row;
+}
+
+.edit-btn {
+  width: 2.5rem;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Jumbotron from './Jumbotron'
 
 export default class SearchLink extends Component {
@@ -33,15 +33,15 @@ export default class SearchLink extends Component {
         <Jumbotron />
         <ul className="nav nav-tabs d-flex">
           <li className="nav-item">
-            <a className="nav-link active" href="/link">
+            <Link to="/link" className="nav-link active">
               DEV. TOOL
-            </a>
+            </Link>
           </li>
-          <li className="nav-item">
-            <a className="nav-link disabled" href="/career">
+          {/* <li className="nav-item">
+            <Link to="/career" className="nav-link disabled">
               JOBS
-            </a>
-          </li>
+            </Link>
+          </li> */}
         </ul>
         <div className="table-responsive table-hover link-table">
           <table className="table">
@@ -64,7 +64,7 @@ export default class SearchLink extends Component {
                   <td>{link.title}</td>
                   <td>{link.description}</td>
                   <td>
-                    <a href={link.url}>{link.url}</a>
+                    <Link to="/link.url">{link.url}</Link>
                   </td>
                   <td>{link.user_id}</td>
                   <td>{link.created_at}</td>

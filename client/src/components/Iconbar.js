@@ -7,7 +7,7 @@ export default class Iconbar extends Component {
       <>
         <div className="screen background-image">
           <ul className="icon">
-            <Link to={'/Link'}>
+            <Link to={'/link'}>
               <li className="link">
                 <i className="fas fa-link" />
               </li>
@@ -17,7 +17,7 @@ export default class Iconbar extends Component {
                 <i className="fab fa-youtube-square" />
               </li>
             </Link>
-            <Link to={'/Image'}>
+            <Link to={'/image'}>
               <li className="image">
                 <i className="far fa-image" />
               </li>
@@ -27,17 +27,17 @@ export default class Iconbar extends Component {
                 <i className="fab fa-medium" />
               </li>
             </Link>
-            <Link to={'/Code'}>
+            <Link to={'/code'}>
               <li className="coding">
                 <i className="fas fa-code" />
               </li>
             </Link>
-            <Link to={'/Meetup'}>
+            <Link to={'/meetup'}>
               <li className="meetup">
                 <i className="fab fa-meetup" />
               </li>
             </Link>
-            <Link to={'/File'}>
+            <Link to={'/file'}>
               <li className="file">
                 <i className="fas fa-file" />
               </li>

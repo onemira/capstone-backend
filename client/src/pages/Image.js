@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Lightbox from 'react-lightbox-component'
 import Jumbotron from '../components/Jumbotron'
+import auth from '../components/auth'
 
 export default class Image extends Component {
   state = {
@@ -88,9 +89,11 @@ export default class Image extends Component {
           >
             Search
           </button>
-          <Link className="btn btn-warning mr-1" tomr-1="/images">
-            Upload
-          </Link>
+          {auth.isAuthenticated() && (
+            <Link className="btn btn-warning mr-1" tomr-1="/images">
+              Upload
+            </Link>
+          )}
         </form>
 
         <main>

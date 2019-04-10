@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Jumbotron from '../components/Jumbotron'
+import { Link } from 'react-router-dom'
 
 class Article extends Component {
   render() {
@@ -19,9 +20,9 @@ class Article extends Component {
                   This is a wider card with supporting text below as a natural
                   lead-in to additional content.
                 </p>
-                <a href="/" className="stretched-link">
+                <Link to="/" className="stretched-link">
                   Continue reading
-                </a>
+                </Link>
               </div>
               <div className="col-auto d-none d-lg-block">
                 <svg
@@ -55,9 +56,9 @@ class Article extends Component {
                   This is a wider card with supporting text below as a natural
                   lead-in to additional content.
                 </p>
-                <a href="/" className="stretched-link">
+                <Link to="/" className="stretched-link">
                   Continue reading
-                </a>
+                </Link>
               </div>
               <div className="col-auto d-none d-lg-block">
                 <svg
@@ -91,7 +92,7 @@ class Article extends Component {
             <div className="blog-post">
               <h2 className="blog-post-title">Sample blog post</h2>
               <p className="blog-post-meta">
-                January 1, 2014 by <a href="/">Mark</a>
+                January 1, 2014 by <Link to="/">Mark</Link>
               </p>
               <p>
                 This blog post shows a few different types of content that’s
@@ -101,8 +102,8 @@ class Article extends Component {
 
               <p>
                 Cum sociis natoque penatibus et magnis{' '}
-                <a href="/">dis parturient montes</a>, nascetur ridiculus mus.
-                Aenean eu leo quam. Pellentesque ornare sem lacinia quam
+                <Link to="/">dis parturient montes</Link>, nascetur ridiculus
+                mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
                 venenatis vestibulum. Sed posuere consectetur est at lobortis.
                 Cras mattis consectetur purus sit amet fermentum.
               </p>
@@ -178,13 +179,13 @@ class Article extends Component {
             <div className="blog-post">
               <h2 className="blog-post-title">Another blog post</h2>
               <p className="blog-post-meta">
-                December 23, 2013 by <a href="/">Jacob</a>
+                December 23, 2013 by <Link to="/">Jacob</Link>
               </p>
 
               <p>
                 Cum sociis natoque penatibus et magnis{' '}
-                <a href="/">dis parturient montes</a>, nascetur ridiculus mus.
-                Aenean eu leo quam. Pellentesque ornare sem lacinia quam
+                <Link to="/">dis parturient montes</Link>, nascetur ridiculus
+                mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
                 venenatis vestibulum. Sed posuere consectetur est at lobortis.
                 Cras mattis consectetur purus sit amet fermentum.
               </p>
@@ -209,17 +210,17 @@ class Article extends Component {
             </div>
 
             <nav className="blog-pagination">
-              <a className="btn btn-outline-primary" href="/">
+              <Link to="/" className="btn btn-outline-primary">
                 Older
-              </a>
-              <a
+              </Link>
+              <Link
+                to="/"
                 className="btn btn-outline-secondary disabled"
-                href="/"
                 tabindex="-1"
                 aria-disabled="true"
               >
                 Newer
-              </a>
+              </Link>
             </nav>
           </div>
         </main>

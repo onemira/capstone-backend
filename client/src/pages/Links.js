@@ -49,13 +49,11 @@ export default class Links extends Component {
         >
           <i className="fas fa-trash-alt" />
         </button>
-        <button className="btn btn-light btn-outline-success">
-          <Link
-            to={`/links/edit/${link.id}`}
-            data-dismiss="modal"
-            // type="button"
-            id="edit"
-          >
+        <button
+          type="button"
+          className="btn btn-light btn-outline-success edit-btn"
+        >
+          <Link to={`/links/edit/${link.id}`} data-dismiss="modal" id="edit">
             <i className="fas fa-edit" />
           </Link>
         </button>
@@ -69,14 +67,14 @@ export default class Links extends Component {
         <Jumbotron />
         <ul className="nav nav-tabs d-flex">
           <li className="nav-item">
-            <a className="nav-link active" href="/link">
+            <Link to="/link" className="nav-link active">
               DEV. TOOL
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link disabled" href="/career">
+            <Link to="/career" className="nav-link disabled">
               JOBS
-            </a>
+            </Link>
           </li>
           <form className="form-inline my-2 my-lg-2">
             <input
@@ -121,7 +119,7 @@ export default class Links extends Component {
                   <td>{link.title}</td>
                   <td>{link.description}</td>
                   <td>
-                    <a href={link.url}>{link.url}</a>
+                    <Link to={link.url}>{link.url}</Link>
                   </td>
                   <td>{link.user_id}</td>
                   <td>{link.created_at}</td>

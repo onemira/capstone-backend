@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Jumbotron from '../components/Jumbotron'
 
 class Code extends Component {
@@ -14,9 +15,9 @@ class Code extends Component {
               With supporting text below as a natural lead-in to additional
               content.
             </p>
-            <a href="/" className="btn btn-primary">
+            <Link to="/" className="btn btn-primary">
               Go somewhere
-            </a>
+            </Link>
           </div>
           <div className="card-footer text-muted">2 days ago</div>
         </div>

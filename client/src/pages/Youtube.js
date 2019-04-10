@@ -42,7 +42,7 @@ class Youtube extends Component {
       <>
         <div>
           <button
-            className=" btn btn-outline-danger video-delete-btn"
+            className=" btn btn-outline-danger video-delete-btn width-100"
             data-dismiss="modal"
             type="button"
             id="del"
@@ -50,7 +50,7 @@ class Youtube extends Component {
           >
             <i className="fas fa-trash-alt" />
           </button>
-          <button className="btn btn-outline-success">
+          <button className="btn btn-outline-success edit-btn">
             <Link
               to={`/videos/edit/${video.id}`}
               // className="video-edit-btn"
@@ -95,6 +95,7 @@ class Youtube extends Component {
         <div className="space-medium transparent-background">
           {this.state.videos.map(video => (
             <div key={video.id} className="video-testimonial-block videos">
+              {this.buttons(video)}
               <div className="embed-responsive embed-responsive-16by9 video">
                 <iframe
                   className="embed-responsive-item"
@@ -106,7 +107,6 @@ class Youtube extends Component {
                   allowFullScreen
                 />
               </div>
-              {this.buttons(video)}
             </div>
           ))}
         </div>

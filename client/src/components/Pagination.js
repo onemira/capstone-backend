@@ -15,27 +15,27 @@
 //                 aria-disabled="true"
 //               >
 //                 Previous
-//               </a>
+//               </Link>
 //             </li>
 //             <li className="page-item">
 //               <a className="page-link" href="#">
 //                 1
-//               </a>
+//               </Link>
 //             </li>
 //             <li className="page-item">
 //               <a className="page-link" href="#">
 //                 2
-//               </a>
+//               </Link>
 //             </li>
 //             <li className="page-item">
 //               <a className="page-link" href="#">
 //                 3
-//               </a>
+//               </Link>
 //             </li>
 //             <li className="page-item">
 //               <a className="page-link" href="#">
 //                 Next
-//               </a>
+//               </Link>
 //             </li>
 //           </ul>
 //         </nav>
