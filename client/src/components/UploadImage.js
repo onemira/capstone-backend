@@ -5,8 +5,6 @@ import Jumbotron from '../components/Jumbotron'
 
 class UploadImage extends Component {
   onSubmit = form => {
-    // console.log(form)
-
     axios
       .post('/api/images', {
         image: form.formData

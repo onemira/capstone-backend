@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
 import { Link } from 'react-router-dom'
 import logo from '../images/logo_cut.png'
 import auth from '../components/auth'
@@ -39,7 +38,7 @@ class Navbar extends Component {
                 <li className="nav-item">
                   <Link to="/link" className="nav-link d-flex flex-column">
                     <i className="fa fa-link fa-2x d-none d-lg-block">
-                      {/* <span className="badge badge-danger fa-1">11</span> */}
+                      {/* <span className="badge badge-danger fa-4">11</span> */}
                     </i>
                     Link
                   </Link>
@@ -118,12 +117,12 @@ class Navbar extends Component {
                 </button> */}
                 {auth.isAuthenticated() && (
                   <Link to="/logout" className="btn btn-primary ml-1">
-                    Log out
+                    Log Out
                   </Link>
                 )}
                 {!auth.isAuthenticated() && (
                   <Link to="/login" className="btn btn-primary ml-1">
-                    Log in
+                    Log In
                   </Link>
                 )}
               </form>

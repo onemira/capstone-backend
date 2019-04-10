@@ -5,13 +5,11 @@ import Jumbotron from '../components/Jumbotron'
 
 class UploadLink extends Component {
   onSubmit = form => {
-    // console.log(form)
     axios
       .post('/api/links', {
         link: form.formData
       })
       .then(response => {
-        console.log(response)
         this.props.history.push('/link')
       })
   }

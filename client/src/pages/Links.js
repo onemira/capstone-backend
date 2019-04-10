@@ -43,18 +43,12 @@ export default class Links extends Component {
       <>
         <button
           className="btn btn-outline-danger"
-          data-dismiss="modal"
-          type="button"
-          id="del"
           onClick={() => this.deleteLink(link.id)}
         >
           <i className="fas fa-trash-alt" />
         </button>
-        <button
-          type="button"
-          className="btn btn-light btn-outline-success edit-btn"
-        >
-          <Link to={`/links/edit/${link.id}`} data-dismiss="modal" id="edit">
+        <button className="btn btn-outline-success edit-btn">
+          <Link to={`/links/edit/${link.id}`}>
             <i className="fas fa-edit" />
           </Link>
         </button>

@@ -48,20 +48,13 @@ export default class Image extends Component {
       <>
         <button
           className="btn btn-light btn-outline-danger image-delete-btn"
-          data-dismiss="modal"
           type="button"
-          id="del"
           onClick={() => this.deleteImage(image.id)}
         >
           <i className="fas fa-trash-alt" />
         </button>
         <button className="btn btn-light btn-outline-success image-edit-btn">
-          <Link
-            to={`/images/edit/${image.id}`}
-            data-dismiss="modal"
-            // type="button"
-            id="edit"
-          >
+          <Link to={`/images/edit/${image.id}`}>
             <i className="fas fa-edit" />
           </Link>
         </button>

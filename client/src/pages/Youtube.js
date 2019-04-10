@@ -43,21 +43,12 @@ class Youtube extends Component {
         <div>
           <button
             className=" btn btn-outline-danger video-delete-btn width-100"
-            data-dismiss="modal"
-            type="button"
-            id="del"
             onClick={() => this.deleteVideo(video.id)}
           >
             <i className="fas fa-trash-alt" />
           </button>
           <button className="btn btn-outline-success edit-btn">
-            <Link
-              to={`/videos/edit/${video.id}`}
-              // className="video-edit-btn"
-              data-dismiss="modal"
-              // type="button"
-              id="edit"
-            >
+            <Link to={`/videos/edit/${video.id}`}>
               <i className="fas fa-edit" />
             </Link>
           </button>
@@ -70,19 +61,16 @@ class Youtube extends Component {
     return (
       <>
         <Jumbotron />
-
         <form className="form-inline my-2 my-lg-2">
           <input
             className="ml-3"
             type="text"
             value={this.state.search}
             onChange={this.onSearch}
-            placeholder="Search..."
+            placeholder="Search"
           />
           <button
             className="btn btn-outline-success my-2 my-sm-0  ml-1 mr-1"
-            type="button"
-            id="search"
             onClick={this.onSearch}
           >
             Search
