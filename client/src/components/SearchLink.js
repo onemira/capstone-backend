@@ -10,7 +10,7 @@ export default class SearchLink extends Component {
   }
 
   loadLinks = () => {
-    axios.get('http://localhost:3000/api/links').then(response => {
+    axios.get('/api/links').then(response => {
       this.setState({ links: response.data })
     })
   }
@@ -21,11 +21,9 @@ export default class SearchLink extends Component {
 
   onSearchChange = event => {
     this.setState({ search: event.target.value }, () => {
-      axios
-        .get(`http://localhost:3000/api/links?search=${this.state.search}`)
-        .then(response => {
-          this.loadLinks()
-        })
+      axios.get(`/api/links?search=${this.state.search}`).then(response => {
+        this.loadLinks()
+      })
     })
   }
 

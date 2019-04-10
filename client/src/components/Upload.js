@@ -6,7 +6,7 @@ import Jumbotron from '../components/Jumbotron'
 class Upload extends Component {
   onSubmit = form => {
     axios
-      .post('http://localhost:3000/api/videos', {
+      .post('/api/videos', {
         video: form.formData
       })
       .then(response => {

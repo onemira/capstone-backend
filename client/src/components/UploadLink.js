@@ -7,7 +7,7 @@ class UploadLink extends Component {
   onSubmit = form => {
     // console.log(form)
     axios
-      .post('http://localhost:3000/api/links', {
+      .post('/api/links', {
         link: form.formData
       })
       .then(response => {

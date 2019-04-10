@@ -11,7 +11,7 @@ export default class Image extends Component {
   }
 
   loadImages = () => {
-    axios.get('http://localhost:3000/api/images').then(response => {
+    axios.get('/api/images').then(response => {
       this.setState({
         images: response.data.map(img => {
           return { ...img, src: img.url }
@@ -26,16 +26,14 @@ export default class Image extends Component {
 
   onSearch = event => {
     this.setState({ search: event.target.value }, () => {
-      axios
-        .get(`http://localhost:3000/api/images?search=${this.state.search}`)
-        .then(response => {
-          this.setState({ images: response.data })
-        })
+      axios.get(`/api/images?search=${this.state.search}`).then(response => {
+        this.setState({ images: response.data })
+      })
     })
   }
 
   deleteImage = id => {
-    axios.delete(`http://localhost:3000/api/images/${id}`).then(response => {
+    axios.delete(`/api/images/${id}`).then(response => {
       this.loadImages()
     })
   }

@@ -10,7 +10,7 @@ export default class Links extends Component {
   }
 
   loadLinks = () => {
-    axios.get('http://localhost:3000/api/links').then(response => {
+    axios.get('/api/links').then(response => {
       this.setState({ links: response.data })
     })
   }
@@ -21,16 +21,14 @@ export default class Links extends Component {
 
   onSearch = event => {
     this.setState({ search: event.target.value }, () => {
-      axios
-        .get(`http://localhost:3000/api/links?search=${this.state.search}`)
-        .then(response => {
-          this.setState({ links: response.data })
-        })
+      axios.get(`/api/links?search=${this.state.search}`).then(response => {
+        this.setState({ links: response.data })
+      })
     })
   }
 
   deleteLink = id => {
-    axios.delete(`http://localhost:3000/api/links/${id}`).then(response => {
+    axios.delete(`/api/links/${id}`).then(response => {
       this.loadLinks()
     })
   }

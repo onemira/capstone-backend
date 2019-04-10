@@ -8,16 +8,14 @@ class Edit extends Component {
   }
 
   componentDidMount = () => {
-    axios
-      .get(`http://localhost:3000/api/videos/${this.props.match.params.id}`)
-      .then(response => {
-        this.setState({ video: response.data })
-      })
+    axios.get(`/api/videos/${this.props.match.params.id}`).then(response => {
+      this.setState({ video: response.data })
+    })
   }
 
   onSubmit = form => {
     axios
-      .put(`http://localhost:3000/api/videos/${this.props.match.params.id}`, {
+      .put(`/api/videos/${this.props.match.params.id}`, {
         video: form.formData
       })
       .then(response => {

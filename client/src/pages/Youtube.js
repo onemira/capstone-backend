@@ -10,7 +10,7 @@ class Youtube extends Component {
   }
 
   loadVideos = () => {
-    axios.get('http://localhost:3000/api/videos').then(response => {
+    axios.get('/api/videos').then(response => {
       this.setState({ videos: response.data })
     })
   }
@@ -21,16 +21,14 @@ class Youtube extends Component {
 
   onSearch = event => {
     this.setState({ search: event.target.value }, () => {
-      axios
-        .get(`http://localhost:3000/api/videos?search=${this.state.search}`)
-        .then(response => {
-          this.setState({ videos: response.data })
-        })
+      axios.get(`/api/videos?search=${this.state.search}`).then(response => {
+        this.setState({ videos: response.data })
+      })
     })
   }
 
   deleteVideo = id => {
-    axios.delete(`http://localhost:3000/api/videos/${id}`).then(response => {
+    axios.delete(`/api/videos/${id}`).then(response => {
       this.loadVideos()
     })
   }

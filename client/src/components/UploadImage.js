@@ -8,7 +8,7 @@ class UploadImage extends Component {
     // console.log(form)
 
     axios
-      .post('http://localhost:3000/api/images', {
+      .post('/api/images', {
         image: form.formData
       })
       .then(response => {
