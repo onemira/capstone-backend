@@ -29,6 +29,7 @@ class Edit extends Component {
       type: 'object',
       required: ['url', 'description'],
       properties: {
+        title: { type: 'string', title: 'Title', default: '' },
         url: { type: 'string', title: 'Url', default: this.state.link.url },
         description: {
           type: 'string',

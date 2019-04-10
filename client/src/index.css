@@ -24,6 +24,7 @@ body,
   background-attachment: fixed;
   background-size: cover;
   border-radius: 0;
+  margin-bottom: 0.5rem;
 }
 
 /* ----icon-navbar---- */
@@ -132,7 +133,7 @@ body,
 }
 
 .image-lightbox img {
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .lightbox-container {

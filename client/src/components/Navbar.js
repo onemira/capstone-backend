@@ -10,7 +10,7 @@ class Navbar extends Component {
       <>
         <main className="navbar-dropdown">
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <Link to className="navbar-brand" href="/">
+            <Link to="/" className="navbar-brand">
               <img src={logo} className="logo" alt="logo" />
             </Link>
             <button

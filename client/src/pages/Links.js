@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Jumbotron from '../components/Jumbotron'
+import moment from 'moment'
 
 export default class Links extends Component {
   state = {
@@ -72,9 +73,9 @@ export default class Links extends Component {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/career" className="nav-link disabled">
+            {/* <Link to="/career" className="nav-link disabled">
               JOBS
-            </Link>
+            </Link> */}
           </li>
           <form className="form-inline my-2 my-lg-2">
             <input
@@ -92,7 +93,7 @@ export default class Links extends Component {
             >
               Search
             </button>
-            <Link className="btn btn-secondary mr-1" to="/links/upload">
+            <Link className="btn btn-dark width-200px mr-1" to="/links/upload">
               Upload
             </Link>
           </form>
@@ -102,7 +103,7 @@ export default class Links extends Component {
           <table className="table">
             <thead>
               <tr>
-                <th scope="col">#</th>
+                {/* <th scope="col">#</th> */}
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
                 <th scope="col">Link</th>
@@ -115,14 +116,14 @@ export default class Links extends Component {
             <tbody>
               {this.state.links.map((link, index) => (
                 <tr key={index}>
-                  <th scope="row">{index + 1}</th>
+                  {/* <th scope="row">{index + 1}</th> */}
                   <td>{link.title}</td>
                   <td>{link.description}</td>
                   <td>
                     <Link to={link.url}>{link.url}</Link>
                   </td>
-                  <td>{link.user_id}</td>
-                  <td>{link.created_at}</td>
+                  <td>{link.user_name}</td>
+                  <td>{moment(link.created_at).calendar()}</td>
                   {this.buttons(link)}
                 </tr>
               ))}

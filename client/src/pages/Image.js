@@ -75,11 +75,11 @@ export default class Image extends Component {
         <Jumbotron />
         <form className="form-inline my-2 my-lg-2">
           <input
-            className="ml-3"
+            className="ml-3 width-70%"
             type="text"
             value={this.state.search}
             onChange={this.onSearch}
-            placeholder="Search..."
+            placeholder="Search"
           />
           <button
             className="btn btn-outline-success my-2 my-sm-0 ml-1 mr-1"
@@ -90,7 +90,7 @@ export default class Image extends Component {
             Search
           </button>
           {auth.isAuthenticated() && (
-            <Link className="btn btn-warning mr-1" tomr-1="/images">
+            <Link className="btn btn-dark width-200px mr-1" tomr-1="/images">
               Upload
             </Link>
           )}
@@ -125,7 +125,10 @@ export default class Image extends Component {
                         src={image.url}
                         className="rounded"
                         border="dark"
-                        style={{ width: '350px', height: '350px' }}
+                        style={{
+                          width: '300px',
+                          height: '300px'
+                        }}
                         onClick={toggleLightbox.bind(null, index)}
                         alt="img"
                       />

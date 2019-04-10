@@ -18,8 +18,10 @@ class User < ApplicationRecord
       #   Rails.logger.info exception
       # end
 
+      Rails.logger.info payload
+
       user.email = payload["email"]
-      user.name = payload["name"]
+      user.name = payload["name"].present? ?payload["name"] : payload["nickname"]
     end
   end
 end
