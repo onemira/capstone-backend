@@ -93,7 +93,7 @@ class Navbar extends Component {
                 </li>
               </ul>
               <form className="form-inline my-2 my-lg-2">
-                <input
+                {/* <input
                   className="form-control mr-sm-2"
                   type="search"
                   placeholder="Search"
@@ -108,7 +108,7 @@ class Navbar extends Component {
                   id="search"
                 >
                   Search
-                </Link>
+                </Link> */}
                 {/* <button
                   className="btn btn-outline-success my-2 my-sm-0 ml-1 mr-1 mt-3"
                   type="submit"

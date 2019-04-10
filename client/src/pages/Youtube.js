@@ -42,7 +42,7 @@ class Youtube extends Component {
       <>
         <div>
           <button
-            className="btn btn-light btn-outline-danger video-delete-btn"
+            className=" btn btn-outline-danger video-delete-btn"
             data-dismiss="modal"
             type="button"
             id="del"
@@ -50,15 +50,17 @@ class Youtube extends Component {
           >
             <i className="fas fa-trash-alt" />
           </button>
-          <Link
-            to={`/videos/edit/${video.id}`}
-            className="btn btn-light btn-outline-warning video-edit-btn"
-            data-dismiss="modal"
-            type="button"
-            id="edit"
-          >
-            <i className="fas fa-edit" />
-          </Link>
+          <button className="btn btn-outline-success">
+            <Link
+              to={`/videos/edit/${video.id}`}
+              // className="video-edit-btn"
+              data-dismiss="modal"
+              // type="button"
+              id="edit"
+            >
+              <i className="fas fa-edit" />
+            </Link>
+          </button>
         </div>
       </>
     )

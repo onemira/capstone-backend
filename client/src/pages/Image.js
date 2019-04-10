@@ -54,16 +54,16 @@ export default class Image extends Component {
         >
           <i className="fas fa-trash-alt" />
         </button>
-
-        <Link
-          to={`/images/edit/${image.id}`}
-          className="btn btn-light btn-outline-warning image-edit-btn"
-          data-dismiss="modal"
-          type="button"
-          id="edit"
-        >
-          <i className="fas fa-edit" />
-        </Link>
+        <button className="btn btn-light btn-outline-success image-edit-btn">
+          <Link
+            to={`/images/edit/${image.id}`}
+            data-dismiss="modal"
+            // type="button"
+            id="edit"
+          >
+            <i className="fas fa-edit" />
+          </Link>
+        </button>
       </>
     )
   }

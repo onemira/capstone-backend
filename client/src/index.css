@@ -97,6 +97,7 @@ body,
 .nav-link {
   align-items: center;
 }
+
 /* ---main-page---- */
 .card {
   display: flex;
@@ -123,6 +124,7 @@ body,
 .portfolio-item {
   /*width:100%;*/
 }
+
 .portfolio-item .item {
   /*width:303px;*/
   float: left;

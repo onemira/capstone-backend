@@ -49,15 +49,16 @@ export default class Links extends Component {
         >
           <i className="fas fa-trash-alt" />
         </button>
-        <Link
-          to={`/links/edit/${link.id}`}
-          className="btn btn-outline-warning"
-          data-dismiss="modal"
-          type="button"
-          id="edit"
-        >
-          <i className="fas fa-cut" />
-        </Link>
+        <button className="btn btn-light btn-outline-success">
+          <Link
+            to={`/links/edit/${link.id}`}
+            data-dismiss="modal"
+            // type="button"
+            id="edit"
+          >
+            <i className="fas fa-edit" />
+          </Link>
+        </button>
       </>
     )
   }
