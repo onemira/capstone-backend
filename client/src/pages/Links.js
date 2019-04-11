@@ -87,9 +87,14 @@ export default class Links extends Component {
             >
               Search
             </button>
-            <Link className="btn btn-dark width-200px mr-1" to="/links/upload">
-              Upload
-            </Link>
+            {auth.isAuthenticated() && (
+              <Link
+                className="btn btn-dark width-200px mr-1"
+                to="/links/upload"
+              >
+                Upload
+              </Link>
+            )}
           </form>
         </ul>
 

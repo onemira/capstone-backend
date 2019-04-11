@@ -75,9 +75,11 @@ class Youtube extends Component {
           >
             Search
           </button>
-          <Link className="btn btn-dark width-200px mr-1" to="/videos/upload">
-            Upload
-          </Link>
+          {auth.isAuthenticated() && (
+            <Link className="btn btn-dark width-200px mr-1" to="/videos/upload">
+              Upload
+            </Link>
+          )}
         </form>
 
         <div className="space-medium transparent-background">

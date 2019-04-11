@@ -83,7 +83,7 @@ export default class Image extends Component {
             Search
           </button>
           {auth.isAuthenticated() && (
-            <Link className="btn btn-dark width-200px mr-1" tomr-1="/images">
+            <Link className="btn btn-dark width-200px mr-1" to="/images/upload">
               Upload
             </Link>
           )}
