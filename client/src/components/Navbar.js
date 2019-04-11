@@ -28,14 +28,22 @@ class Navbar extends Component {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
+                <li
+                  className="nav-item active"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                >
                   <Link to={'/'} className="nav-link d-flex flex-column">
                     <i className="fa fa-home fa-2x d-none d-lg-block" />
                     Home
                     <span className="sr-only">(current)</span>
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li
+                  className="nav-item"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                >
                   <Link to="/link" className="nav-link d-flex flex-column">
                     <i className="fa fa-link fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-danger fa-4">11</span> */}
@@ -43,7 +51,11 @@ class Navbar extends Component {
                     Link
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li
+                  className="nav-item"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                >
                   <Link to="/video" className="nav-link d-flex flex-column">
                     <i className="fab fa-youtube fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-warning">11</span> */}
@@ -51,7 +63,11 @@ class Navbar extends Component {
                     Video
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li
+                  className="nav-item"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                >
                   <Link to="/image" className="nav-link d-flex flex-column">
                     <i className="fa fa-image fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-primary">11</span> */}
@@ -59,7 +75,11 @@ class Navbar extends Component {
                     Image
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li
+                  className="nav-item"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                >
                   <Link to="/article" className="nav-link d-flex flex-column">
                     <i className="fab fa-medium fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-secondary">11</span> */}
@@ -67,7 +87,11 @@ class Navbar extends Component {
                     Article
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li
+                  className="nav-item"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                >
                   <Link to="/code" className="nav-link d-flex flex-column">
                     <i className="fa fa-code fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-info">11</span> */}
@@ -75,7 +99,11 @@ class Navbar extends Component {
                     Code
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li
+                  className="nav-item"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                >
                   <Link to="/meetup" className="nav-link d-flex flex-column">
                     <i className="fab fa-meetup fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-light">11</span> */}
@@ -83,7 +111,11 @@ class Navbar extends Component {
                     Meetup
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li
+                  className="nav-item"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse.show"
+                >
                   <Link to="/file" className="nav-link d-flex flex-column">
                     <i className="fa fa-file fa-2x d-none d-lg-block">
                       {/* <span className="badge badge-success">11</span> */}

@@ -12,8 +12,8 @@ export default class jumbotron extends Component {
             <br />
             <br />
             <p className="lead text-light">
-              Welcome Wizards! Here is something that makes you laugh,
-              resourceful, and you folks want to share with!
+              Welcome Wizards! Devvit is a place to laugh, learn and share
+              resources :D
             </p>
           </div>
         </section>

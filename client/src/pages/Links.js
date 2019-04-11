@@ -63,7 +63,7 @@ export default class Links extends Component {
         <ul className="nav nav-tabs d-flex">
           <li className="nav-item">
             <Link to="/link" className="nav-link active">
-              DEV. TOOL
+              Links
             </Link>
           </li>
           <li className="nav-item">
@@ -77,7 +77,7 @@ export default class Links extends Component {
               type="text"
               value={this.state.search}
               onChange={this.onSearch}
-              placeholder="Search..."
+              placeholder="Search"
             />
             <button
               className="btn btn-outline-success my-2 my-sm-0 ml-1 mr-1"
@@ -93,10 +93,10 @@ export default class Links extends Component {
           </form>
         </ul>
 
-        <div className="table-responsive table-hover link-table">
-          <table className="table">
+        <div className="table-responsive link-table">
+          <table className="table table-hover">
             <thead>
-              <tr>
+              <tr className="table-info">
                 {/* <th scope="col">#</th> */}
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>

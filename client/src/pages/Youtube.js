@@ -42,12 +42,12 @@ class Youtube extends Component {
       <>
         <div>
           <button
-            className=" btn btn-outline-danger video-delete-btn width-100"
+            className=" btn btn-outline-danger video-delete-btn width-100 btns"
             onClick={() => this.deleteVideo(video.id)}
           >
             <i className="fas fa-trash-alt" />
           </button>
-          <button className="btn btn-outline-success edit-btn">
+          <button className="btn btn-outline-success edit-btn btns">
             <Link to={`/videos/edit/${video.id}`}>
               <i className="fas fa-edit" />
             </Link>
@@ -61,7 +61,7 @@ class Youtube extends Component {
     return (
       <>
         <Jumbotron />
-        <form className="form-inline my-2 my-lg-2">
+        <form className="form-inline my-2 my-lg-2 mt-3">
           <input
             className="ml-3"
             type="text"
@@ -70,7 +70,7 @@ class Youtube extends Component {
             placeholder="Search"
           />
           <button
-            className="btn btn-outline-success my-2 my-sm-0  ml-1 mr-1"
+            className="btn btn-outline-success my-2 my-sm-0 ml-1 mr-1"
             onClick={this.onSearch}
           >
             Search
@@ -83,7 +83,6 @@ class Youtube extends Component {
         <div className="space-medium transparent-background">
           {this.state.videos.map(video => (
             <div key={video.id} className="video-testimonial-block videos">
-              {this.buttons(video)}
               <div className="embed-responsive embed-responsive-16by9 video">
                 <iframe
                   className="embed-responsive-item"
@@ -95,6 +94,7 @@ class Youtube extends Component {
                   allowFullScreen
                 />
               </div>
+              {this.buttons(video)}
             </div>
           ))}
         </div>

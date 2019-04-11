@@ -66,7 +66,7 @@ export default class Image extends Component {
     return (
       <>
         <Jumbotron />
-        <form className="form-inline my-2 my-lg-2">
+        <form className="form-inline my-2 my-lg-2 mt-3">
           <input
             className="ml-3 width-70%"
             type="text"
