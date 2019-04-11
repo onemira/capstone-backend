@@ -68,9 +68,9 @@ export default class Links extends Component {
             </Link>
           </li>
           <li className="nav-item">
-            {/* <Link to="/career" className="nav-link disabled">
+            <Link to="/career" className="nav-link disabled">
               JOBS
-            </Link> */}
+            </Link>
           </li>
           <form className="form-inline my-2 my-lg-2">
             <input
@@ -120,7 +120,7 @@ export default class Links extends Component {
                   <td>{link.title}</td>
                   <td>{link.description}</td>
                   <td>
-                    <Link to={link.url}>{link.url}</Link>
+                    <a href={link.url}>{link.url}</a>
                   </td>
                   <td>{link.user_name}</td>
                   <td>{moment(link.created_at).calendar()}</td>

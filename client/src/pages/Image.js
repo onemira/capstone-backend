@@ -102,6 +102,7 @@ export default class Image extends Component {
 
             <div className="row image-lightbox mx-auto">
               <Lightbox
+                showImageModifiers={true}
                 key={this.state.images}
                 images={this.state.images}
                 renderImageFunc={(
