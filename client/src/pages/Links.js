@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Jumbotron from '../components/Jumbotron'
+import auth from '../components/auth'
 import moment from 'moment'
 
 export default class Links extends Component {

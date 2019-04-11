@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Jumbotron from '../components/Jumbotron'
+import auth from '../components/auth'
 
 class Youtube extends Component {
   state = {
