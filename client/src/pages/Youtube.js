@@ -41,14 +41,14 @@ class Youtube extends Component {
 
     return (
       <>
-        <div>
+        <div class="buttons">
           <button
-            className=" btn btn-outline-danger video-delete-btn width-100 btns"
+            className=" btn btn-outline-danger"
             onClick={() => this.deleteVideo(video.id)}
           >
             <i className="fas fa-trash-alt" />
           </button>
-          <button className="btn btn-outline-success edit-btn btns">
+          <button className="btn btn-outline-success edit-btn">
             <Link to={`/videos/edit/${video.id}`}>
               <i className="fas fa-edit" />
             </Link>
@@ -83,21 +83,32 @@ class Youtube extends Component {
           )}
         </form>
 
-        <div className="space-medium transparent-background">
+        <div className="card text-center container-fluid p-0 mt-5 bg-white">
           {this.state.videos.map(video => (
-            <div key={video.id} className="video-testimonial-block videos">
-              <div className="embed-responsive embed-responsive-16by9 video">
-                <iframe
-                  className="embed-responsive-item"
-                  title="videos"
-                  src={video.url}
-                  description={video.description}
-                  frameBorder="1"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+            <div
+              key={video.id}
+              className="video-testimonial-block videos d-block mb-5"
+            >
+              <div className="card-header p-1">
+                {this.buttons(video)}
+                <div className="embed-responsive embed-responsive-16by9 video">
+                  <iframe
+                    className="embed-responsive-item"
+                    title="videos"
+                    src={video.url}
+                    description={video.description}
+                    frameBorder="1"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
               </div>
-              {this.buttons(video)}
+
+              <div class="card-body">
+                <h5 class="card-title">{video.description}</h5>
+                <p className="card-text">{video.user_name}</p>
+              </div>
+              <div class="card-footer text-muted"> {video.created_at} </div>
             </div>
           ))}
         </div>

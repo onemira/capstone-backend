@@ -502,30 +502,38 @@ html.lightbox-open {
   min-width: 300px;
 }
 
-.videos {
+/* .card {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  padding: 1.5rem;
+  flex-direction: column;
+  display: inline-block;
   position: relative;
-}
+} */
 
+/*
 .video {
-  max-width: 560px;
-  max-height: 315px;
+  background-color: red;
+  width: 560px;
+  height: 315px;
   border: double gray;
-}
-
-.video-detail {
+  vertical-align: center;
+} */
+/* 
+.video_detail {
+  background-color: aqua;
   display: flex;
-  /* flex-wrap: wrap; */
-  justify-content: center;
+  justify-content: space-between;
+
   flex-direction: row;
-}
+  padding: 1rem;
+  max-width: 560px;
+} */
 
-.btns {
+.buttons {
   display: flex;
-  height: 2.5rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  max-height: 2.5rem;
 }
 
 .edit-btn {
