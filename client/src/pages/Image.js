@@ -92,9 +92,7 @@ export default class Image extends Component {
         <main>
           <section className="album py-5 bg-light center dp-flex justify-content-md-center">
             <h4 className="border-bottom border-dark mb-5 text-center p-2">
-              {/* Let Your Sadness Comment Out!{' '}
-               */}{' '}
-              if(sad() === true)&#123;spread.stop(); beHappy()&#125;{' '}
+              if(sad() === true)&#123;spread.stop(); beHappy()&#125;
               <span role="img" aria-label="smile">
                 😆
               </span>

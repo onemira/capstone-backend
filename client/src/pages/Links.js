@@ -103,7 +103,6 @@ export default class Links extends Component {
           <table className="table table-hover">
             <thead>
               <tr className="table-info">
-                {/* <th scope="col">#</th> */}
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
                 <th scope="col">Link</th>
@@ -116,7 +115,6 @@ export default class Links extends Component {
             <tbody>
               {this.state.links.map((link, index) => (
                 <tr key={index}>
-                  {/* <th scope="row">{index + 1}</th> */}
                   <td>{link.title}</td>
                   <td>{link.description}</td>
                   <td>
