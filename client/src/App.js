@@ -5,7 +5,7 @@ import axios from 'axios'
 import auth from './components/auth'
 import history from './components/history'
 import Navbar from './components/Navbar'
-import Upload from './components/Upload'
+import UploadVideo from './components/UploadVideo'
 import UploadLink from './components/UploadLink'
 import UploadImage from './components/UploadImage'
 import EditVideo from './components/EditVideo'
@@ -14,7 +14,7 @@ import EditLink from './components/EditLink'
 import LinksCareer from './components/LinksCareer'
 
 import MainPage from './pages/MainPage'
-import Youtube from './pages/Youtube'
+import Video from './pages/Video'
 import Image from './pages/Image'
 import Links from './pages/Links'
 // import Code from './pages/Code'
@@ -58,7 +58,7 @@ class App extends Component {
             />
 
             <Route exact path="/" component={MainPage} />
-            <Route exact path="/videos/upload" component={Upload} />
+            <Route exact path="/videos/upload" component={UploadVideo} />
             <Route exact path="/links/upload" component={UploadLink} />
             <Route exact path="/images/upload" component={UploadImage} />
             <Route exact path="/videos/edit/:id" component={EditVideo} />
@@ -66,7 +66,7 @@ class App extends Component {
             <Route exact path="/links/edit/:id" component={EditLink} />
             <Route exact path="/link/career" component={LinksCareer} />
             <Route exact path="/link" component={Links} />
-            <Route exact path="/video" component={Youtube} />
+            <Route exact path="/video" component={Video} />
             <Route exact path="/image" component={Image} />
             {/* <Route exact path="/file" component={File} />
             <Route exact path="/article" component={Article} />

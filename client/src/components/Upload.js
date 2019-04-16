@@ -1,94 +1,35 @@
 import React, { Component } from 'react'
 import Form from 'react-jsonschema-form'
 import axios from 'axios'
-import Jumbotron from '../components/Jumbotron'
+import Jumbotron from './Jumbotron'
 
 class Upload extends Component {
+  state = {
+    model: {}
+  }
+
   onSubmit = form => {
     axios
-      .post('/api/videos', {
-        video: form.formData
+      .post(this.props.apiPostURL, {
+        [this.props.modelName]: form.formData
       })
       .then(response => {
-        this.props.history.push('/video')
+        this.props.history.push(this.props.afterSubmitRoute)
       })
   }
 
   render() {
-    const formSchema = {
-      title: 'Video',
-      type: 'object',
-      required: ['url', 'description'],
-      properties: {
-        url: { type: 'string', title: 'Url', default: '' },
-        description: { type: 'string', title: 'Description', default: '' }
-      }
-    }
-
     return (
       <>
         <Jumbotron />
         <div className="form-group row mt-3 ml-5 mr-1">
           <label for="inputName" className="col-sm-5 col-form-label">
-            <Form schema={formSchema} onSubmit={this.onSubmit} />
+            <Form
+              schema={this.props.formSchemaFunction(this.state.model)}
+              onSubmit={this.onSubmit}
+            />
           </label>
         </div>
-        {/* -----select a category----- */}
-        {/* <form>
-          <fieldset className="form-group">
-            <div className="row mt-3 ml-5 mr-5">
-              <legend className="col-form-label col-sm-2 pt-0">
-                Categories
-              </legend>
-              <div className="col-sm-10">
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="gridRadios"
-                    id="gridRadios1"
-                    value="option1"
-                    checked
-                  />
-                  <label className="form-check-label" for="gridRadios1">
-                    Link
-                  </label>
-                </div>
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="gridRadios"
-                    id="gridRadios2"
-                    value="option2"
-                  />
-                  <label className="form-check-label" for="gridRadios2">
-                    Video
-                  </label>
-                </div>
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="gridRadios"
-                    id="gridRadios2"
-                    value="option3"
-                  />
-                  <label className="form-check-label" for="gridRadios2">
-                    Image
-                  </label>
-                </div>
-              </div>
-            </div>
-        {/* -----upload file----- */}
-        {/* <div className="form-group row mt-3 ml-5 mr-5">
-              <form method="post" action="#" id="#">
-                <div className="form-group files color">
-                  <label>Upload Your File </label>
-                  <input type="file" className="form-control" multiple="" />
-                </div>
-              </form>
-            </div> */}
       </>
     )
   }
