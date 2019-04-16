@@ -61,7 +61,34 @@ export default class Links extends Component {
     return (
       <>
         <Jumbotron />
-        <ul className="nav nav-tabs d-flex">
+        <div className="btn-bar d-flex row ml-1">
+          <form className="form-inline ">
+            <input
+              className="ml-2"
+              type="text"
+              value={this.state.search}
+              onChange={this.onSearch}
+              placeholder="Search"
+            />
+          </form>
+          <button
+            className="btn btn-outline-success my-2 my-sm-0 ml-1 mr-1"
+            type="button"
+            id="search"
+            onClick={this.onSearch}
+          >
+            Search
+          </button>
+          {auth.isAuthenticated() && (
+            <Link
+              className="btn btn-dark width-200px height-50px mr-1"
+              to="/links/upload"
+            >
+              Upload
+            </Link>
+          )}
+        </div>
+        <ul className="nav nav-tabs d-flex mt-4">
           <li className="nav-item">
             <Link to="/link" className="nav-link active">
               Links
@@ -72,37 +99,12 @@ export default class Links extends Component {
               JOBS
             </Link>
           </li>
-          <form className="form-inline ">
-            <input
-              className="ml-3"
-              type="text"
-              value={this.state.search}
-              onChange={this.onSearch}
-              placeholder="Search"
-            />
-            <button
-              className="btn btn-outline-success my-2 my-sm-0 ml-1 mr-1"
-              type="button"
-              id="search"
-              onClick={this.onSearch}
-            >
-              Search
-            </button>
-            {auth.isAuthenticated() && (
-              <Link
-                className="btn btn-dark width-200px mr-1"
-                to="/links/upload"
-              >
-                Upload
-              </Link>
-            )}
-          </form>
         </ul>
 
         <div className="table-responsive link-table">
-          <table className="table table-hover">
+          <table className="table table-hover ml-2 ">
             <thead>
-              <tr className="thead-light">
+              <tr className="thead-light align-middle mr-2">
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
                 <th scope="col">Link</th>

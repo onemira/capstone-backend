@@ -132,15 +132,15 @@ body,
 /*# sourceMappingURL=index.css.map*/
 .image-edit-btn {
   position: absolute;
-  top: 2rem;
-  right: 4.5rem;
+  top: 1rem;
+  right: 3.5rem;
   width: 2.5rem;
 }
 
 .image-delete-btn {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
   width: 2.5rem;
 }
 

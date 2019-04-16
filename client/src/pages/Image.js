@@ -90,8 +90,8 @@ export default class Image extends Component {
         </form>
 
         <main>
-          <section className="album py-5 bg-light center dp-flex justify-content-md-center">
-            <h4 className="border-bottom border-dark mb-5 text-center p-2">
+          <section className="container album py-5">
+            <h4 className="border-bottom mb-5 text-center p-2">
               if(sad() === true)&#123;spread.stop(); beHappy()&#125;
               <span role="img" aria-label="smile">
                 😆
@@ -100,6 +100,7 @@ export default class Image extends Component {
 
             <div className="row image-lightbox mx-auto">
               <Lightbox
+                // className="mx-auto"
                 showImageModifiers={true}
                 key={this.state.images}
                 images={this.state.images}
@@ -110,7 +111,7 @@ export default class Image extends Component {
                   width,
                   height
                 ) => {
-                  console.log({ image, toggleLightbox, index })
+                  // console.log({ image, toggleLightbox, index })
                   return (
                     <div key={index} className="d-flex flex-column">
                       <img
