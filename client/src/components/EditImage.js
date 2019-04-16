@@ -1,53 +1,35 @@
 import React, { Component } from 'react'
-import Form from 'react-jsonschema-form'
-import axios from 'axios'
+import Edit from './Edit'
 
-class Edit extends Component {
-  state = {
-    image: {}
-  }
-
-  componentDidMount = () => {
-    axios.get(`/api/images/${this.props.match.params.id}`).then(response => {
-      this.setState({ image: response.data })
-    })
-  }
-
-  onSubmit = form => {
-    axios
-      .put(`/api/images/${this.props.match.params.id}`, {
-        image: form.formData
-      })
-      .then(response => {
-        this.props.history.push('/image')
-      })
-  }
-
+class EditImage extends Component {
   render() {
-    const formSchema = {
-      title: 'Image',
-      type: 'object',
-      required: ['url', 'description'],
-      properties: {
-        url: { type: 'string', title: 'Url', default: this.state.image.url },
-        description: {
-          type: 'string',
-          title: 'Description',
-          default: this.state.image.description
+    const imageFormSchemaFunction = image => {
+      return {
+        title: 'Image',
+        type: 'object',
+        required: ['url', 'description'],
+        properties: {
+          url: { type: 'string', title: 'Url', default: image.url },
+          description: {
+            type: 'string',
+            title: 'Description',
+            default: image.description
+          }
         }
       }
     }
 
     return (
-      <>
-        <div className="form-group row mt-3 ml-5 mr-1">
-          <label for="inputName" className="col-sm-5 col-form-label">
-            <Form schema={formSchema} onSubmit={this.onSubmit} />
-          </label>
-        </div>
-      </>
+      <Edit
+        history={this.props.history}
+        modelName="image"
+        apiGetURL={`/api/images/${this.props.match.params.id}`}
+        apiPutURL={`/api/images/${this.props.match.params.id}`}
+        afterSubmitRoute={'/image'}
+        formSchemaFunction={imageFormSchemaFunction}
+      />
     )
   }
 }
 
-export default Edit
+export default EditImage

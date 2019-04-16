@@ -1,58 +1,40 @@
 import React, { Component } from 'react'
-import Form from 'react-jsonschema-form'
-import axios from 'axios'
+import Edit from './Edit'
 
-class Edit extends Component {
-  state = {
-    link: {}
-  }
-
-  componentDidMount = () => {
-    axios.get(`/api/links/${this.props.match.params.id}`).then(response => {
-      this.setState({ link: response.data })
-    })
-  }
-
-  onSubmit = form => {
-    axios
-      .put(`/api/links/${this.props.match.params.id}`, {
-        link: form.formData
-      })
-      .then(response => {
-        this.props.history.push('/link')
-      })
-  }
-
+class EditLink extends Component {
   render() {
-    const formSchema = {
-      title: 'Link',
-      type: 'object',
-      required: ['url', 'description'],
-      properties: {
-        title: {
-          type: 'string',
-          title: 'Title',
-          default: this.state.link.title
-        },
-        url: { type: 'string', title: 'Url', default: this.state.link.url },
-        description: {
-          type: 'string',
-          title: 'Description',
-          default: this.state.link.description
+    const linkFormSchemaFunction = link => {
+      return {
+        title: 'Link',
+        type: 'object',
+        required: ['url', 'description'],
+        properties: {
+          title: {
+            type: 'string',
+            title: 'Title',
+            default: link.title
+          },
+          url: { type: 'string', title: 'Url', default: link.url },
+          description: {
+            type: 'string',
+            title: 'Description',
+            default: link.description
+          }
         }
       }
     }
 
     return (
-      <>
-        <div className="form-group row mt-3 ml-5 mr-1">
-          <label for="inputName" className="col-sm-5 col-form-label">
-            <Form schema={formSchema} onSubmit={this.onSubmit} />
-          </label>
-        </div>
-      </>
+      <Edit
+        history={this.props.history}
+        modelName="link"
+        apiGetURL={`/api/links/${this.props.match.params.id}`}
+        apiPutURL={`/api/links/${this.props.match.params.id}`}
+        afterSubmitRoute={'/link'}
+        formSchemaFunction={linkFormSchemaFunction}
+      />
     )
   }
 }
 
-export default Edit
+export default EditLink
