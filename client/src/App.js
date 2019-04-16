@@ -11,6 +11,7 @@ import UploadImage from './components/UploadImage'
 import Edit from './components/Edit'
 import EditImage from './components/EditImage'
 import EditLink from './components/EditLink'
+import LinksCareer from './components/LinksCareer'
 
 import MainPage from './pages/MainPage'
 import Youtube from './pages/Youtube'
@@ -63,6 +64,7 @@ class App extends Component {
             <Route exact path="/videos/edit/:id" component={Edit} />
             <Route exact path="/images/edit/:id" component={EditImage} />
             <Route exact path="/links/edit/:id" component={EditLink} />
+            <Route exact path="/link/career" component={LinksCareer} />
             <Route exact path="/link" component={Links} />
             <Route exact path="/video" component={Youtube} />
             <Route exact path="/image" component={Image} />

@@ -68,11 +68,11 @@ export default class Links extends Component {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/career" className="nav-link disabled">
+            <Link to="/link/career" className="nav-link">
               JOBS
             </Link>
           </li>
-          <form className="form-inline my-2 my-lg-2">
+          <form className="form-inline ">
             <input
               className="ml-3"
               type="text"
@@ -102,7 +102,7 @@ export default class Links extends Component {
         <div className="table-responsive link-table">
           <table className="table table-hover">
             <thead>
-              <tr className="table-info">
+              <tr className="thead-light">
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
                 <th scope="col">Link</th>

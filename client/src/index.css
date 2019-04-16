@@ -6,7 +6,7 @@ html,
 body,
 #root {
   height: 100%;
-  background-color: rgb(247, 247, 242);
+  background-color: #ffffff;
 }
 
 .background-image {
@@ -110,6 +110,7 @@ body,
 .portfolio-menu {
   text-align: center;
 }
+
 .portfolio-menu ul li {
   display: inline-block;
   margin: 0;
@@ -121,9 +122,6 @@ body,
   -ms-transition: all 05s ease;
   -o-transition: all 05s ease;
   transition: all 0.5s ease;
-}
-
-.portfolio-item {
 }
 
 .portfolio-item .item {
@@ -138,6 +136,7 @@ body,
   right: 4.5rem;
   width: 2.5rem;
 }
+
 .image-delete-btn {
   position: absolute;
   top: 2rem;
@@ -153,12 +152,50 @@ body,
 }
 
 .buttons {
-  display: flex;
+  position: absolute;
+  top: 17.8rem;
+  right: 0.2rem;
+  width: 2.5rem;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   max-height: 2.5rem;
+  position: relative; */
 }
 
 .edit-btn {
   width: 2.5rem;
 }
+
+/* .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  text-align: center;
+  background-color: #ffffff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+} */
+
+/* .video {
+  min-width: 560px;
+  min-height: 365px;
+} */

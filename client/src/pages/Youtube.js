@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Jumbotron from '../components/Jumbotron'
 import auth from '../components/auth'
+import moment from 'moment'
 
 class Youtube extends Component {
   state = {
@@ -41,19 +42,19 @@ class Youtube extends Component {
 
     return (
       <>
-        <div class="buttons">
-          <button
-            className=" btn btn-outline-danger"
-            onClick={() => this.deleteVideo(video.id)}
-          >
-            <i className="fas fa-trash-alt" />
-          </button>
-          <button className="btn btn-outline-success edit-btn">
-            <Link to={`/videos/edit/${video.id}`}>
-              <i className="fas fa-edit" />
-            </Link>
-          </button>
-        </div>
+        {/* <div class="buttons"> */}
+        <button
+          className=" btn btn-outline-danger"
+          onClick={() => this.deleteVideo(video.id)}
+        >
+          <i className="fas fa-trash-alt" />
+        </button>
+        <button className="btn btn-outline-success edit-btn">
+          <Link to={`/videos/edit/${video.id}`}>
+            <i className="fas fa-edit" />
+          </Link>
+        </button>
+        {/* </div> */}
       </>
     )
   }
@@ -83,34 +84,40 @@ class Youtube extends Component {
           )}
         </form>
 
-        <div className="card text-center container-fluid p-0 mt-5 bg-white">
-          {this.state.videos.map(video => (
-            <div
-              key={video.id}
-              className="video-testimonial-block videos d-block mb-5"
-            >
-              <div className="card-header p-1">
-                {this.buttons(video)}
-                <div className="embed-responsive embed-responsive-16by9 video">
-                  <iframe
-                    className="embed-responsive-item"
-                    title="videos"
-                    src={video.url}
-                    description={video.description}
-                    frameBorder="1"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+        <div class="container">
+          <div className="row">
+            {this.state.videos.map(video => (
+              <div
+                key={video.id}
+                className="video-testimonial-block col-md-6 mb-4"
+              >
+                <div className="card mb-4 shadow-sm">
+                  <div className="embed-responsive embed-responsive-16by9 video p-3">
+                    <iframe
+                      className="embed-responsive-item"
+                      title="videos"
+                      src={video.url}
+                      description={video.description}
+                      frameBorder="1"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+
+                  <div class="card-body">
+                    <div class="buttons">{this.buttons(video)}</div>
+                    <h5 class="card-title">{video.description}</h5>
+                    <p className="card-text">{video.user_name}</p>
+                    <p className="card-text">
+                      <small className="text-muted">
+                        {moment(video.created_at).format('lll')}{' '}
+                      </small>
+                    </p>
+                  </div>
                 </div>
               </div>
-
-              <div class="card-body">
-                <h5 class="card-title">{video.description}</h5>
-                <p className="card-text">{video.user_name}</p>
-              </div>
-              <div class="card-footer text-muted"> {video.created_at} </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </>
     )
