@@ -23,12 +23,10 @@ class Upload extends Component {
       <>
         <Jumbotron />
         <div className="form-group row mt-3 ml-5 mr-1">
-          <label for="inputName" className="col-sm-5 col-form-label">
-            <Form
-              schema={this.props.formSchemaFunction(this.state.model)}
-              onSubmit={this.onSubmit}
-            />
-          </label>
+          <Form
+            schema={this.props.formSchemaFunction(this.state.model)}
+            onSubmit={this.onSubmit}
+          />
         </div>
       </>
     )

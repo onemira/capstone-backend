@@ -19,7 +19,7 @@ class UploadVideo extends Component {
       <Upload
         history={this.props.history}
         modelName="video"
-        apiPostURL={`/api/videos`}
+        apiPostURL={'/api/videos'}
         afterSubmitRoute={'/video'}
         formSchemaFunction={videoFormSchemaFunction}
       />
