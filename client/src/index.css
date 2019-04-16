@@ -104,7 +104,7 @@ body,
 .card {
   display: flex;
   justify-content: center;
-  max-width: 30rem;
+  /* max-width: 30rem; */
 }
 
 .portfolio-menu {

@@ -61,35 +61,29 @@ export default class Links extends Component {
     return (
       <>
         <Jumbotron />
-        <div className="btn-bar d-flex row ml-1">
-          <form className="form-inline ">
-            <input
-              className="ml-2"
-              type="text"
-              value={this.state.search}
-              onChange={this.onSearch}
-              placeholder="Search"
-            />
-          </form>
+        <form className="form-inline">
+          <input
+            className="ml-3"
+            type="text"
+            value={this.state.search}
+            onChange={this.onSearch}
+            placeholder="Search"
+          />
           <button
             className="btn btn-outline-success my-2 my-sm-0 ml-1 mr-1"
-            type="button"
-            id="search"
             onClick={this.onSearch}
           >
             Search
           </button>
 
           {auth.isAuthenticated() && (
-            <Link
-              className="btn btn-dark  my-2 my-sm-0 link-upload-btn"
-              to="/links/upload"
-            >
+            <Link className="btn btn-dark " to="/links/upload">
               Upload
             </Link>
           )}
-        </div>
-        <ul className="nav nav-tabs d-flex mt-4">
+        </form>
+
+        <ul className="nav nav-tabs d-flex mt-2">
           <li className="nav-item">
             <Link to="/link" className="nav-link active">
               Links

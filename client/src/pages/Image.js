@@ -48,13 +48,13 @@ export default class Image extends Component {
     return (
       <>
         <button
-          className="btn btn-light btn-outline-danger"
+          className="btn btn-outline-danger"
           type="button"
           onClick={() => this.deleteImage(image.id)}
         >
           <i className="fas fa-trash-alt" />
         </button>
-        <button className="btn btn-light btn-outline-success edit-btn">
+        <button className="btn btn-outline-success edit-btn">
           <Link to={`/images/edit/${image.id}`}>
             <i className="fas fa-edit" />
           </Link>
@@ -67,9 +67,9 @@ export default class Image extends Component {
     return (
       <>
         <Jumbotron />
-        <form className="form-inline my-2 my-lg-2 mt-3">
+        <form className="form-inline">
           <input
-            className="ml-3 width-70%"
+            className="ml-3"
             type="text"
             value={this.state.search}
             onChange={this.onSearch}
@@ -84,66 +84,64 @@ export default class Image extends Component {
             Search
           </button>
           {auth.isAuthenticated() && (
-            <Link className="btn btn-dark width-200px mr-1" to="/images/upload">
+            <Link className="btn btn-dark" to="/images/upload">
               Upload
             </Link>
           )}
         </form>
 
-        <main>
-          <section className="container m-auto p-3">
-            <h4 className="border-bottom mb-5 text-center p-2">
-              if(sad() === true)&#123;spread.stop(); beHappy()&#125;
-              <span role="img" aria-label="smile">
-                😆
-              </span>
-            </h4>
+        <section className="container ">
+          <h4 className="border-bottom mt-5 mb-5 text-center p-3">
+            if(sad() === true)&#123;spread.stop(); beHappy()&#125;
+            <span role="img" aria-label="smile">
+              😆
+            </span>
+          </h4>
 
-            <div className="row image-lightbox mx-auto">
-              <Lightbox
-                showImageModifiers={true}
-                key={this.state.images}
-                images={this.state.images}
-                renderImageFunc={(
-                  index,
-                  image,
-                  toggleLightbox,
-                  width,
-                  height
-                ) => {
-                  return (
-                    <div key={index} className="card mb-4 shadow-sm mr-md-4">
-                      <img
-                        src={image.url}
-                        className="rounded embed-responsive-item"
-                        border="dark"
-                        style={{
-                          width: '300px',
-                          height: '300px'
-                        }}
-                        onClick={toggleLightbox.bind(null, index)}
-                        alt="img"
-                      />
+          <div className="row image-lightbox">
+            <Lightbox
+              showImageModifiers={true}
+              key={this.state.images}
+              images={this.state.images}
+              renderImageFunc={(
+                index,
+                image,
+                toggleLightbox,
+                width,
+                height
+              ) => {
+                return (
+                  <div key={index} className="card mb-4 shadow-sm mr-md-4">
+                    <img
+                      src={image.url}
+                      className="rounded embed-responsive-item"
+                      border="dark"
+                      style={{
+                        width: '320px',
+                        height: '320px'
+                      }}
+                      onClick={toggleLightbox.bind(null, index)}
+                      alt="img"
+                    />
 
-                      <div className="card-body ml-3">
-                        <div>
-                          <h5 className="card-title">{image.description}</h5>
-                        </div>
-                        <p className="card-text m-0">{image.user_name}</p>
-                        <p className="d-flex justify-content-between align-items-center m-0 mr-1">
-                          <small className="text-muted mb-3">
-                            {moment(image.created_at).format('lll')}
-                          </small>
-                          <p>{this.buttons(image)}</p>
-                        </p>
+                    <div className="card-body ml-3">
+                      <div>
+                        <h5 className="card-title">{image.description}</h5>
                       </div>
+                      <p className="card-text m-0">{image.user_name}</p>
+                      <p className="d-flex justify-content-between align-items-center m-0 mr-1">
+                        <small className="text-muted mb-3">
+                          {moment(image.created_at).format('lll')}
+                        </small>
+                        <p>{this.buttons(image)}</p>
+                      </p>
                     </div>
-                  )
-                }}
-              />
-            </div>
-          </section>
-        </main>
+                  </div>
+                )
+              }}
+            />
+          </div>
+        </section>
       </>
     )
   }

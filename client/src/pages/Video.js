@@ -43,7 +43,7 @@ class Video extends Component {
     return (
       <>
         <button
-          className=" btn btn-outline-danger"
+          className="btn btn-outline-danger"
           onClick={() => this.deleteVideo(video.id)}
         >
           <i className="fas fa-trash-alt" />
@@ -61,7 +61,7 @@ class Video extends Component {
     return (
       <>
         <Jumbotron />
-        <form className="form-inline my-2 my-lg-2 mt-4 mb-4">
+        <form className="form-inline mb-3">
           <input
             className="ml-3"
             type="text"
@@ -76,7 +76,7 @@ class Video extends Component {
             Search
           </button>
           {auth.isAuthenticated() && (
-            <Link className="btn btn-dark width-200px mr-1" to="/videos/upload">
+            <Link className="btn btn-dark" to="/videos/upload">
               Upload
             </Link>
           )}
@@ -92,7 +92,7 @@ class Video extends Component {
                 <div className="card mb-4 shadow-sm">
                   <div className="embed-responsive embed-responsive-16by9 video p-3">
                     <iframe
-                      className="embed-responsive-item"
+                      className="rounded embed-responsive-item"
                       title="videos"
                       src={video.url}
                       description={video.description}
