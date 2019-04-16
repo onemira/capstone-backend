@@ -129,21 +129,6 @@ body,
   margin-bottom: 10px;
 }
 
-/*# sourceMappingURL=index.css.map*/
-.image-edit-btn {
-  position: absolute;
-  top: 1rem;
-  right: 3.5rem;
-  width: 2.5rem;
-}
-
-.image-delete-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 2.5rem;
-}
-
 /* -----link_table---- */
 .link-table {
   display: flex;
@@ -151,52 +136,13 @@ body,
   min-width: 300px;
 }
 
-.buttons {
-  /* position: absolute;
-  top: 15.8rem;
-  right: 0.2rem;
-  width: 2.5rem; */
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  max-height: 2.5rem;
-  position: relative; */
-}
-
 .edit-btn {
   margin-top: 1px;
   width: 2.5rem;
 }
 
-/* .container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+@media (min-height: 115px) {
+  .video-card {
+    height: 120px;
+  }
 }
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  text-align: center;
-  background-color: #ffffff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
-} */
-
-/* .video {
-  min-width: 560px;
-  min-height: 365px;
-} */

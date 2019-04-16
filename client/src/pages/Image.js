@@ -4,6 +4,7 @@ import axios from 'axios'
 import Lightbox from 'react-lightbox-component'
 import Jumbotron from '../components/Jumbotron'
 import auth from '../components/auth'
+import moment from 'moment'
 
 export default class Image extends Component {
   state = {
@@ -47,13 +48,13 @@ export default class Image extends Component {
     return (
       <>
         <button
-          className="btn btn-light btn-outline-danger image-delete-btn"
+          className="btn btn-light btn-outline-danger"
           type="button"
           onClick={() => this.deleteImage(image.id)}
         >
           <i className="fas fa-trash-alt" />
         </button>
-        <button className="btn btn-light btn-outline-success image-edit-btn">
+        <button className="btn btn-light btn-outline-success edit-btn">
           <Link to={`/images/edit/${image.id}`}>
             <i className="fas fa-edit" />
           </Link>
@@ -90,7 +91,7 @@ export default class Image extends Component {
         </form>
 
         <main>
-          <section className="container album py-5">
+          <section className="container m-auto p-3">
             <h4 className="border-bottom mb-5 text-center p-2">
               if(sad() === true)&#123;spread.stop(); beHappy()&#125;
               <span role="img" aria-label="smile">
@@ -100,7 +101,6 @@ export default class Image extends Component {
 
             <div className="row image-lightbox mx-auto">
               <Lightbox
-                // className="mx-auto"
                 showImageModifiers={true}
                 key={this.state.images}
                 images={this.state.images}
@@ -111,12 +111,11 @@ export default class Image extends Component {
                   width,
                   height
                 ) => {
-                  // console.log({ image, toggleLightbox, index })
                   return (
-                    <div key={index} className="d-flex flex-column">
+                    <div key={index} className="card mb-4 shadow-sm mr-md-4">
                       <img
                         src={image.url}
-                        className="rounded"
+                        className="rounded embed-responsive-item"
                         border="dark"
                         style={{
                           width: '300px',
@@ -125,7 +124,19 @@ export default class Image extends Component {
                         onClick={toggleLightbox.bind(null, index)}
                         alt="img"
                       />
-                      {this.buttons(image)}
+
+                      <div className="card-body ml-3">
+                        <div>
+                          <h5 className="card-title">{image.description}</h5>
+                        </div>
+                        <p className="card-text m-0">{image.user_name}</p>
+                        <p className="d-flex justify-content-between align-items-center m-0 mr-1">
+                          <small className="text-muted mb-3">
+                            {moment(image.created_at).format('lll')}
+                          </small>
+                          <p>{this.buttons(image)}</p>
+                        </p>
+                      </div>
                     </div>
                   )
                 }}

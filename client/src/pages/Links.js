@@ -79,9 +79,10 @@ export default class Links extends Component {
           >
             Search
           </button>
+
           {auth.isAuthenticated() && (
             <Link
-              className="btn btn-dark width-200px height-50px mr-1"
+              className="btn btn-dark  my-2 my-sm-0 link-upload-btn"
               to="/links/upload"
             >
               Upload
@@ -94,11 +95,11 @@ export default class Links extends Component {
               Links
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link to="/link/career" className="nav-link">
               JOBS
             </Link>
-          </li>
+          </li> */}
         </ul>
 
         <div className="table-responsive link-table">

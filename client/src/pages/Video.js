@@ -42,7 +42,6 @@ class Video extends Component {
 
     return (
       <>
-        {/* <div class="buttons"> */}
         <button
           className=" btn btn-outline-danger"
           onClick={() => this.deleteVideo(video.id)}
@@ -54,7 +53,6 @@ class Video extends Component {
             <i className="fas fa-edit" />
           </Link>
         </button>
-        {/* </div> */}
       </>
     )
   }
@@ -63,7 +61,7 @@ class Video extends Component {
     return (
       <>
         <Jumbotron />
-        <form className="form-inline my-2 my-lg-2 mt-3">
+        <form className="form-inline my-2 my-lg-2 mt-4 mb-4">
           <input
             className="ml-3"
             type="text"
@@ -104,9 +102,9 @@ class Video extends Component {
                     />
                   </div>
 
-                  <div class="card-body">
+                  <div className="card-body video-card">
                     <div>
-                      <h5 class="card-title mb-2">{video.description}</h5>
+                      <h5 className="card-title mb-2">{video.description}</h5>
                     </div>
                     <p className="card-text m-0">{video.user_name}</p>
                     <p className="d-flex justify-content-between align-items-center m-0">
