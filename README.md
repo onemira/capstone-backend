@@ -4,9 +4,9 @@
 - **Devvit - Reddit for Developers)**
 - **Massive data de-clustering solution for developers**
 
-<img src="./src/images/devvit.gif>
+![](devvit.gif)
 
-## Why Devvit :laughing:
+## Why Devvit :+1:
 
 _Sharing Information_ is a great practice of developers. Throughout immersive code school, we have been shared of a great amount of useful materials in different type of data via Slack. However, searching for the previous information was a hassle at the times like scrolling up and down and searching for random words. In order to solve this clustered data problem shared via Slack, I developed this website with clearly distinguished categories like drawers organize clothing into categories in a dresser.
 
@@ -24,8 +24,8 @@ Data organized with subjective org. schema
 
 <b>Built with</b>
 
-- [REACT](https://reactjs.org/) -Framework
-- [PostgreSql](https://www.postgresql.org/) - Object-relational database management system -[RUBY](https://www.ruby-lang.org) -Back end Language
+- [REACT](https://reactjs.org/) Framework
+- [PostgreSql](https://www.postgresql.org/) Object-relational database management system -[RUBY](https://www.ruby-lang.org) Back end Language
 
 ### Code Example
 
