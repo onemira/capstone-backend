@@ -63,7 +63,7 @@ class Video extends Component {
         <Jumbotron />
         <form className="form-inline mb-3">
           <input
-            className="ml-3"
+            className="search mr-sm-2 ml-3"
             type="text"
             value={this.state.search}
             onChange={this.onSearch}
@@ -82,7 +82,7 @@ class Video extends Component {
           )}
         </form>
 
-        <div class="container">
+        <div className="container">
           <div className="row">
             {this.state.videos.map(video => (
               <div

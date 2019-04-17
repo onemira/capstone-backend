@@ -69,7 +69,7 @@ export default class Image extends Component {
         <Jumbotron />
         <form className="form-inline">
           <input
-            className="ml-3"
+            className="search mr-sm-2 ml-3"
             type="text"
             value={this.state.search}
             onChange={this.onSearch}
@@ -111,7 +111,10 @@ export default class Image extends Component {
                 height
               ) => {
                 return (
-                  <div key={index} className="card mb-4 shadow-sm mr-md-4">
+                  <div
+                    key={index}
+                    className="card mb-4 shadow-sm mr-md-2 ml-md-2"
+                  >
                     <img
                       src={image.url}
                       className="rounded embed-responsive-item"

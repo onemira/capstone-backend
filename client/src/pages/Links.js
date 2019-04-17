@@ -63,7 +63,7 @@ export default class Links extends Component {
         <Jumbotron />
         <form className="form-inline">
           <input
-            className="ml-3"
+            className="search ml-3"
             type="text"
             value={this.state.search}
             onChange={this.onSearch}

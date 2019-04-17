@@ -146,3 +146,9 @@ body,
     height: 120px;
   }
 }
+
+@media (width: 320px) {
+  .search {
+    max-width: 8.5rem;
+  }
+}
