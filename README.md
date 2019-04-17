@@ -4,7 +4,7 @@
 - **Devvit - Reddit for Developers)**
 - **Massive data de-clustering solution for developers**
 
-![](devvit.gif)
+![](./src/images/devvit.gif)
 
 ## Why Devvit :+1:
 
