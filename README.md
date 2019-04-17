@@ -1,31 +1,23 @@
-# Devvit
+# Devvit  
 
 
-- **Developer's Directory**
-- **Devvit - Reddit for Developers)**
-- **Massive data de-clustering solution for developers**
+
+- Developer's Directory
+- Devvit is named after 'Reddit' for Developers 
+- Massive data de-clustering solution for developers
 
 
-![](./src/images/devvit.gif)
+
+![](./client/src/images/devvit.gif)
+
+> Keep Calm and Share Your Data!
 
 
 ## Why Devvit :+1:
 
 
-_Sharing Information_ is a great practice of developers. Throughout immersive code school, we have been shared of a great amount of useful materials in different type of data via Slack. However, searching for the previous information was a hassle at the times like scrolling up and down and searching for random words. In order to solve this clustered data problem shared via Slack, I developed this website with clearly distinguished categories like drawers organize clothing into categories in a dresser.
+_Sharing Information_ is a great practice of developers. Throughout immersive code school, I have been shared of a great amount of resourceful materials in different types of data via Slack. However, searching for the previous information was always a hassle especially when the information was shared a while ago. In order to solve this clustered data problem and to save our data more practially and efficiently, I have developed this app with clearly-distinguished categories using with subjective org. schema.
 
-
-> Keep Calm and Share Your Data!
-
-
-### Features
-
-
-Data organized with subjective org. schema
-
-<!-- ## Code style
-
-![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat) -->
 
 
 ### Tech/framework used
@@ -68,6 +60,14 @@ const imageFormSchemaFunction = image => {
     />
   )
 ```
+
+### Task Lists
+
+- [x] DRY the code
+- [x] Post, Edit, Delete, Search functionalties 
+- [ ] Show a message when a user is logged on 'Welcome, (user_name)!'
+- [ ] Activate the rest of pages (Article, Meetup, Code, File)
+
 
 ### License
 
