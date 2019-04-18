@@ -3,6 +3,7 @@ import Edit from './Edit'
 
 class EditImage extends Component {
   render() {
+    //created function to call Image Form Schema using embedding expression
     const imageFormSchemaFunction = image => {
       return {
         title: 'Image',
@@ -18,7 +19,7 @@ class EditImage extends Component {
         }
       }
     }
-
+    // access id from the URL via match.params on the props in generic (composing) components
     return (
       <Edit
         history={this.props.history}

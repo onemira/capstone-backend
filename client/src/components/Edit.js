@@ -8,6 +8,7 @@ class Edit extends Component {
     model: {}
   }
 
+  //Add Lifecycle method to get model data using axios
   componentDidMount = () => {
     axios.get(this.props.apiGetURL).then(response => {
       this.setState({ model: response.data })
